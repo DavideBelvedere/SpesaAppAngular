@@ -1,0 +1,22 @@
+<div class="navbar">
+    <nav>
+        <img src="../../../assets/img/logo.png">
+        <ul *ngIf="!isLogged">
+            <ng-container *ngFor="let item of menuListUnlogged">
+                <a href="#{{item.route}}">{{item.title}}</a>
+            </ng-container>
+
+            <button>ACCEDI</button>
+        </ul>
+
+        <ul *ngIf="isLogged">
+            <ng-container *ngFor="let item of menuListLogged">
+                <div routerLinkActive="selected">
+                    <a routerLink="/{{item.route}}">{{item.title}}</a>
+                </div>
+            </ng-container>
+        </ul>
+
+    </nav>
+
+</div>
