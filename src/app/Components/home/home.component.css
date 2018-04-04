@@ -1,4 +1,4 @@
-
+/* PRIMA PAGINA */
 .scarica {
     width: 100%;
     height: 600px;
@@ -24,7 +24,7 @@
 
 
 #bluebox{
-    background-color: lightseagreen;
+    background-color: #59afe2;
     position: relative;
     width: 100%;
     height: 190px;
@@ -47,33 +47,100 @@
     z-index: 1;
 }
 
-
+/* SECONDA PAGINA */
 .funzionalita {
     position: relative;
     width: 100%;
     height: 600px;
     text-align: center;
+    padding-top: 45px;
     margin-bottom: 90px;
     background-color: white;
     z-index: 2;
     border: solid white;
+    color: #4f5d7a;
+    font-size: 20px;
 }
 
 .funz-box {
-    background-image: url('http://saluteopinioni.it/wp-content/uploads/2017/01/carrello_spesa_supermercato_fotolia-kRvH-835x437@IlSole24Ore-Web.jpg');
-    width: fit-content;
-    margin: 80px 120px 20px 120px;
+    width: 500px;
+    margin: 50px 120px 0px 120px;
     display: inline-block;
-    height: 150px;
-    border: 3px solid #73AD21;
+    height: 300px;
+    position: relative;
+    padding: none;
 }
+
+#funz-box-1 {
+    background-image: url('../../../assets/Risorse custom/funz1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#funz-box-1 p{
+    top: 150px;
+    position: relative;
+}
+#funz-box-1 h3{
+    position: relative;
+    top: 46px;
+    right: 20px;
+ }
+
+ 
+#funz-box-2{
+    background-image: url('../../../assets/Risorse custom/funz2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#funz-box-2 p{
+    top: 170px;
+    position: relative;
+}
+#funz-box-2 h3{
+    text-align: right;
+    position: relative;
+ }
+
+
+#funz-box-3 {
+    background-image: url('../../../assets/Risorse custom/funz3.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#funz-box-3 p{
+    top: 170px;
+    position: relative;
+}
+#funz-box-3 h3{
+    text-align: left;
+    position: relative;
+    top: 80px;
+    left: 55px;
+ }
+
 
 #funz-box-4 {
-    margin: 10px 120px 20px 120px;
+    background-image: url('../../../assets/Risorse custom/funz4.png');
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
+#funz-box-4 h3{
+    text-align: left;
+    position: relative;
+    top: 70px;
+}
+#funz-box-4 p{
+    position: relative;
+    bottom: -180px;
+    text-align: left;
+}
+
+
 .contatti {
+    visibility: hidden;
     text-align: center;
+    border: solid white;
 }
 
 .form-email {
