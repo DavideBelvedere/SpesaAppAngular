@@ -8,6 +8,7 @@
     background-repeat: no-repeat;
     overflow: hidden;
     z-index: -1;
+    font-family: 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .download-text {
@@ -19,7 +20,6 @@
     left: -280px;
     color: white;
     font-size: 23px;
-
 }
 
 
@@ -29,14 +29,16 @@
     width: 100%;
     height: 190px;
     top: 190px;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .bluebox-text{
     position: relative;
-    left: 325px;
+    left: 385px;
     top: 30px;
     margin: auto;
     color: white;
+    font-size: 16px;
 }
 
 .bluebox-text img{
@@ -45,8 +47,9 @@
 
 #phone{
     position: absolute;
-    top: 160px;
-    right: 290px;
+    width: 20%;
+    top: 120px;
+    right: 350px;
     overflow: hidden;
     z-index: 1;
 }
@@ -65,15 +68,18 @@
     border: solid white;
     color: #4f5d7a;
     font-size: 20px;
+    font-family: 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 .funz-box {
     width: 500px;
-    margin: 50px 120px 0px 120px;
+    margin: 40px 120px 0px 120px;
     display: inline-block;
     height: 300px;
     position: relative;
     padding: none;
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 #funz-box-1 {
@@ -82,13 +88,13 @@
     background-repeat: no-repeat;
 }
 #funz-box-1 p{
-    top: 150px;
+    top: 140px;
     position: relative;
 }
 #funz-box-1 h3{
     position: relative;
     top: 46px;
-    right: 20px;
+    right: -80px;
  }
 
  
@@ -98,12 +104,14 @@
     background-repeat: no-repeat;
 }
 #funz-box-2 p{
-    top: 170px;
+    top: 150px;
     position: relative;
 }
 #funz-box-2 h3{
     text-align: right;
     position: relative;
+    top: 40px;
+    right: 40px;;
  }
 
 
@@ -133,11 +141,11 @@
 #funz-box-4 h3{
     text-align: left;
     position: relative;
-    top: 70px;
+    top: 60px;
 }
 #funz-box-4 p{
     position: relative;
-    bottom: -180px;
+    bottom: -160px;
     text-align: left;
 }
 
@@ -152,6 +160,8 @@
     margin-top: 90px;
     text-align: center;
     border: solid white;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+
 }
 
 
@@ -160,6 +170,7 @@
     width: 600px;
     height: 40px;
     margin: 10px;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 
@@ -170,6 +181,8 @@
     height: 150px;
     margin: 10px;
     padding: none;
+    font-family:Arial, Helvetica, sans-serif;
+
 }
 
 button {
@@ -181,4 +194,11 @@ button {
     background-color: #4f5d7a;
     color: white;
     border: none;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#email::placeholder, #mex::placeholder  {
+    padding: 15px;
+    font-size: 19px;
+    color: lightgray;
 }
