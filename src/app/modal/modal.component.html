@@ -1,0 +1,20 @@
+<div class="veil">
+</div>
+
+<div id="modal-confirm" *ngIf="confirm_modal">
+
+    <div class="title">Elimina Lista</div>
+    <div class="text">vuoi eliminare la definitivamente la lista <strong>{{list}}</strong>?</div>
+    <hr>
+
+    <div class="buttons">
+        <div class="annulla" (click)="back">Annulla</div>
+        <div class="conferma" (click)="confirm">Conferma</div>
+    </div>
+</div>
+
+
+<div id="modal-login" *ngIf="login_modal">
+
+
+</div>
