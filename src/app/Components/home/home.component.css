@@ -1,0 +1,53 @@
+.scarica {
+    background-image: url('http://saluteopinioni.it/wp-content/uploads/2017/01/carrello_spesa_supermercato_fotolia-kRvH-835x437@IlSole24Ore-Web.jpg');
+    height: 600px;
+    background-position: center;
+    background-size: auto;
+}
+
+.download-text {
+    width: 30%;
+    text-align: left;
+    padding: 2%;
+}
+
+.funzionalita {
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.funz-box {
+    background-image: url('http://saluteopinioni.it/wp-content/uploads/2017/01/carrello_spesa_supermercato_fotolia-kRvH-835x437@IlSole24Ore-Web.jpg');
+    width: fit-content;
+    margin: 80px 120px 20px 120px;
+    display: inline-block;
+    height: 150px;
+    border: 3px solid #73AD21;
+}
+
+#funz-box-4 {
+    margin: 10px 120px 20px 120px;
+}
+
+.contatti {
+    text-align: center;
+}
+
+.form-email {
+    width: 600px;
+    height: 30px;
+}
+
+.form-mex {
+    width: 600px;
+    height: 200px;
+    margin-top: 30px;
+    vertical-align: top;
+}
+
+button {
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: lightblue;
+    width: 10%;
+}
