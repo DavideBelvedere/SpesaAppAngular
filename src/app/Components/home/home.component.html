@@ -24,7 +24,6 @@
     <h1>Scopri le funzionalita fai la spesa senza pensieri!</h1>
     <p>« Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt</p>
 
-    <div class="boxone">
         <div class="funz-box" id="funz-box-1">
                 <h3>Crea e salva le tue liste</h3>
                 <p>Compri sempre gli stessi articoli oppure<br> aggiungi sempre nuovi prodotti?</p>
@@ -48,8 +47,6 @@
         </div>
     </div>
 
-</div>
-
 <!--FORM E CONTATTI-->
 <div class="contatti" id="contatti">
     <h2>Vuoi scriverci un messaggio?</h2>
@@ -57,9 +54,9 @@
 
     <form>
         <div class="form-group">
-            <input type="email" class="form-email" required id="email" name="email" value="indirizzo e-mail" /> <br>
-            <input type="text" class="form-mex" required id="mex" name="mex" value="Scrivi il tuo messaggio!" /> <br>
+            <input type="email" required id="email" name="email" placeholder="indirizzo e-mail" /> <br>
+            <textarea name="messaggio" required id="mex" name="mex" placeholder="Scrivi il tuo messaggio!"></textarea><br>
             <button type="submit" class="button" [disabled]="!contattiForm.form.valid" (click)="sendMessage()">INVIA MESSAGGIO</button>
         </div>
-    </form>
+        </form>
 </div>
