@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from '../../Model/headerItem';
 import { RoutingEnum } from '../../Model/Enum/RoutingEnum';
+import { LoginService } from '../../Services/HttpRequest/HttpUtilityService/login.service';
 
 @Component({
   selector: 'header',
@@ -8,6 +9,7 @@ import { RoutingEnum } from '../../Model/Enum/RoutingEnum';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
   isLogged: boolean = false;
   private menuListUnlogged: MenuItem[] = [
     new MenuItem(RoutingEnum.Scarica, "Scarica"),
@@ -23,7 +25,11 @@ export class HeaderComponent implements OnInit {
   ];
 
 
-  constructor() { }
+  constructor(private loginService: LoginService) { 
+    this.loginService.logged$.subscribe((login: boolean) => {
+      this.isLogged = login;
+    });
+  }
 
   ngOnInit() {
   }

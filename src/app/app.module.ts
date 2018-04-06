@@ -9,6 +9,10 @@ import { RecipeComponent } from './Components/recipe/recipe.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 import { CustomRouterModule } from './Routing/router.module';
+import { HttpService } from './Services/HttpRequest/http.service';
+import { LoginService } from './Services/HttpRequest/HttpUtilityService/login.service';
+import { HomeComponent } from './Components/home/home.component';
+import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -20,13 +24,16 @@ import { CustomRouterModule } from './Routing/router.module';
     RecipeComponent,
     FooterComponent,
     PageNotFoundComponent,
+    HomeComponent,
+ 
   
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     CustomRouterModule
   ],
-  providers: [],
+  providers: [HttpService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

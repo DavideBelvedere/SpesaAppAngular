@@ -10,7 +10,7 @@ import { RecipeComponent } from '../Components/recipe/recipe.component';
 const routes: Routes = [
   { path: RoutingEnum.List, component: ListComponent},
   { path: RoutingEnum.Recipe, component: RecipeComponent },
-  //{ path: "", redirectTo: "/home", pathMatch: "full" },//all'inizio accederà ad home
+  { path: "", redirectTo: "/home", pathMatch: "full" },//all'inizio accederà ad home
   { path: "**", component: PageNotFoundComponent }
 ];
 
