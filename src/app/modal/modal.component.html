@@ -1,20 +1,32 @@
 <div class="veil">
 </div>
 
-<div id="modal-confirm" *ngIf="confirm_modal">
+<div class="input">
 
-    <div class="title">Elimina Lista</div>
-    <div class="text">vuoi eliminare la definitivamente la lista <strong>{{list}}</strong>?</div>
-    <hr>
+    <div class="title">{{modalData.title}}</div>
+    <div class="text" [innerHtml]="modalData.subtitle"></div>
 
-    <div class="buttons">
-        <div class="annulla" (click)="back">Annulla</div>
-        <div class="conferma" (click)="confirm">Conferma</div>
+    <div class="login" *ngIf="modalData.showLogin">
+        <label>Email:</label>
+        <input type="text" class="email">
+        <label>Password</label>
+        <input type="password" class="password">
     </div>
+
+    <div class="">
+
+
+
+    </div>
+
+    <div class="buttons" *ngIf="modalData.undo.show || modalData.confirm.show">
+        <div class="annulla" *ngIf="modalData.undo.show" (click)="modalData.undo.callback()">{{modalData.undo.title}}</div>
+        <div class="conferma" *ngIf="modalData.confirm.show" (click)="modalData.confirm.callback()">{{modalData.confirm.title}}</div>
+    </div>
+
 </div>
 
-
-<div id="modal-login" *ngIf="login_modal">
+<div>
 
 
 </div>

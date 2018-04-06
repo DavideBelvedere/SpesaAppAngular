@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+import { ListService } from '../list.service';
+import { ModalDataService } from './modal.data.service';
+import { ModalData } from './modal.data';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'modal',
@@ -8,21 +12,32 @@ import { Subject } from 'rxjs/Subject';
 })
 export class ModalComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  modalData: ModalData;
+
+  modalDelete: Object;
+  constructor(private listService: ListService, private modalDataService: ModalDataService) {
+
+    
+  }
 
   ngOnInit() {
   }
-list : string = "Spesa al Mercato";
 
-confirm(){
+  confirm() {
 
-}
+  }
 
-back(){
+email : string;
+password: string;
 
-}
+  back() {
+    this.listService.setModal(false);
+  }
 
-confirm_modal: boolean = false;
-login_modal : boolean = true;
+  login(email : string, password: string){
+    this.modalDataService.takeLogin(email, password);
+  }
+
 
 }

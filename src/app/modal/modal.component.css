@@ -63,3 +63,12 @@
 .conferma:hover {
     cursor: pointer;
 }
+
+.input {
+    width: 400px;
+    background-color: white;
+    position: fixed;
+    z-index: 5;
+    top: 200px;
+    left: 300px;
+}
