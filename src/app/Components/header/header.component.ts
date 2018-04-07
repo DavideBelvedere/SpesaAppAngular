@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem } from '../../Model/headerItem';
 import { RoutingEnum } from '../../Model/Enum/RoutingEnum';
 import { LoginService } from '../../Services/HttpRequest/HttpUtilityService/login.service';
+import { User } from '../../Model/User';
 
 @Component({
   selector: 'header',
@@ -11,6 +12,8 @@ import { LoginService } from '../../Services/HttpRequest/HttpUtilityService/logi
 export class HeaderComponent implements OnInit {
 
   isLogged: boolean = false;
+  currentUser: User = null;
+  isProfileClicked: boolean = false;
   private menuListUnlogged: MenuItem[] = [
     new MenuItem(RoutingEnum.Scarica, "Scarica"),
     new MenuItem(RoutingEnum.Fuzionalita, "Funzionalità"),
@@ -24,10 +27,22 @@ export class HeaderComponent implements OnInit {
     new MenuItem(RoutingEnum.Recipe, "Ricette"),
   ];
 
+  isProfileClickedFun() {
+    if (this.isProfileClicked) {
+      this.isProfileClicked = false;
 
-  constructor(private loginService: LoginService) { 
+    } else {
+      this.isProfileClicked = true;
+    }
+
+  }
+
+  constructor(private loginService: LoginService) {
     this.loginService.logged$.subscribe((login: boolean) => {
       this.isLogged = login;
+      if (this.isLogged) {
+        this.currentUser = loginService.getCurrentUser();
+      }
     });
   }
 

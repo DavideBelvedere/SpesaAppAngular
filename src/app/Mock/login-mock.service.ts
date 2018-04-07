@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class UrlMockUtilsService {
+export class LoginMockService {
 
     getMock(id: string): any {
         return this.serviceMap[id] ? this.serviceMap[id].mock : "";
@@ -12,12 +12,12 @@ export class UrlMockUtilsService {
     }
 
     serviceMap: { [key: string]: any; } = {
-        moccked: { mock: LoginMock, url: 'auth/login' }
+        mocked: { mock: LoginMock, url: 'auth/login' }
     }
 }
 
 export const LoginMock =
     {
-        user: "Mario Rossi",
+        username: "Mario Rossi",
         email: "mario.rossi@gmail.com"
     }

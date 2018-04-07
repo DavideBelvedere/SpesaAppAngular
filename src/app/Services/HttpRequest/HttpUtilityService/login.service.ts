@@ -9,6 +9,7 @@ export class LoginService {
   private logged: Subject<boolean> = new Subject<boolean>();
   public logged$ = this.logged.asObservable();
 
+
   constructor(private httpService: HttpService) { }
 
   public nextLogged(logged: boolean){
@@ -19,7 +20,7 @@ export class LoginService {
       'Authorization': 'Basic ' + btoa(user.username + ":" + user.password)
     });
     this.httpService.callGet(
-      'moccked', 
+      'mocked', 
       header, 
       (response)=>{
         if(callback)
@@ -39,6 +40,10 @@ export class LoginService {
     } else {
       return true;
     }
+  }
+
+  getCurrentUser(): User{
+    return (JSON.parse(sessionStorage.getItem('user')) as User);
   }
 
 

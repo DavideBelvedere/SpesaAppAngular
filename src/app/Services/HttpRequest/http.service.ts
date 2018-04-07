@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment.mock';
-import { UrlMockUtilsService } from '../url-mock.service';
+import { LoginMockService } from '../../Mock/login-mock.service';
 
 @Injectable()
 export class HttpService {
@@ -22,7 +22,7 @@ export class HttpService {
 
   callGet(idurl: string, header: HttpHeaders = null, callback = null, errorCallback = null) {
     
-    let prova: UrlMockUtilsService = new UrlMockUtilsService();
+    let prova: LoginMockService = new LoginMockService();
     if(!environment.useMock){ // se NON è mock
       
       // this.http.get(this.utilityService.getBaseUrl() + prova.getUrlService(idurl), { headers: this.getAuthHeader(header), observe: 'response' }).subscribe(

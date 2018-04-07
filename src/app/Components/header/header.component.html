@@ -1,22 +1,33 @@
 <div class="navbar">
     <nav>
-        <img src="../../../assets/img/logo.png">
-        <ul *ngIf="!isLogged">
-            <ng-container *ngFor="let item of menuListUnlogged">
-                <a href="#{{item.route}}">{{item.title}}</a>
-            </ng-container>
+        <a routerLink="/home"><img id="logo" src="../../../assets/img/logo.png" alt="logo"></a>
+        <div class="navDiv">
+            <ul *ngIf="!isLogged">
+                <ng-container *ngFor="let item of menuListUnlogged">
+                    <div class="optionDiv">
+                        <a class="option" href="#{{item.route}}">{{item.title}}</a>
+                    </div>
+                </ng-container>
 
-            <button>ACCEDI</button>
-        </ul>
+                <button>ACCEDI</button>
+            </ul>
 
-        <ul *ngIf="isLogged">
-            <ng-container *ngFor="let item of menuListLogged">
-                <div routerLinkActive="selected">
-                    <a routerLink="/{{item.route}}">{{item.title}}</a>
-                </div>
-            </ng-container>
-        </ul>
+            <ul *ngIf="isLogged">
+                <ng-container *ngFor="let item of menuListLogged">
+                    <div class="optionDiv" routerLinkActive="active">
+                        <a class="option" routerLink="/{{item.route}}">{{item.title}}</a>
+                    </div>
+                </ng-container>
+                <img (click)="isProfileClickedFun()" *ngIf="isLogged" id="profile" src="../../../assets/img/profile.png" alt="profile">
+            </ul>
 
+        </div>
     </nav>
 
+</div>
+<div *ngIf="isProfileClicked" class="profileDiv fadeIn">
+    <a>{{currentUser.username}}</a>
+    <p>{{currentUser.email}}</p>
+    <hr>
+    <a>Logout</a>
 </div>
