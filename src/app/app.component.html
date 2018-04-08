@@ -1,5 +1,4 @@
-<header></header>
-<home *ngIf="!isLogged"></home>
-<logged-components *ngIf="isLogged"></logged-components>
+<header *ngIf="showHeader"></header>
 <!--<loader *ngIf="showLoader"></loader>-->
+<router-outlet></router-outlet>
 <footer></footer>

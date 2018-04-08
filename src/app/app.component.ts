@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { LoginService } from './Services/HttpRequest/HttpUtilityService/login.service';
+import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +8,7 @@ import { LoginService } from './Services/HttpRequest/HttpUtilityService/login.se
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isLogged: boolean = false;
+  showHeader:boolean=true;
   title = 'app';
-  constructor(private loginService: LoginService) { 
-    this.loginService.logged$.subscribe((login: boolean) => {
-      this.isLogged = login;
-    });
-  }
+ 
 }

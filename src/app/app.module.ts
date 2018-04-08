@@ -13,7 +13,8 @@ import { HttpService } from './Services/HttpRequest/http.service';
 import { LoginService } from './Services/HttpRequest/HttpUtilityService/login.service';
 import { HomeComponent } from './Components/home/home.component';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
-import { LoggedComponentsComponent } from './Components/logged-components/logged-components.component';
+import { AuthguardService } from './Routing/Authguard/authguard.service';
+import { HomeAuthguardService } from './Routing/Authguard/home-authguard.service';
 
 
 
@@ -26,7 +27,7 @@ import { LoggedComponentsComponent } from './Components/logged-components/logged
     FooterComponent,
     PageNotFoundComponent,
     HomeComponent,
-    LoggedComponentsComponent,
+
  
   
   ],
@@ -35,7 +36,7 @@ import { LoggedComponentsComponent } from './Components/logged-components/logged
     BrowserModule,
     CustomRouterModule
   ],
-  providers: [HttpService, LoginService],
+  providers: [HttpService, LoginService, AuthguardService, HomeAuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

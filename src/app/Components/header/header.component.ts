@@ -46,11 +46,17 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  doLogout(){
+  doLogout() {
     this.loginService.logout();
-    this.isProfileClicked=false;
+    this.isProfileClicked = false;
   }
   ngOnInit() {
+    this.isLogged = this.loginService.isLogged();
+    if (this.isLogged) {
+      this.currentUser = this.loginService.getCurrentUser();
+    } else{
+      this.currentUser=null;
+    }
   }
 
 }

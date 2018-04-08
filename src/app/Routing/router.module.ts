@@ -5,14 +5,16 @@ import { ListComponent } from '../Components/list/list.component';
 import { PageNotFoundComponent } from '../Components/page-not-found/page-not-found.component';
 import { RecipeComponent } from '../Components/recipe/recipe.component';
 import { HomeComponent } from '../Components/home/home.component';
+import { AuthguardService } from './Authguard/authguard.service';
+import { HomeAuthguardService } from './Authguard/home-authguard.service';
 
 
 
 const routes: Routes = [
-  { path: RoutingEnum.List, component: ListComponent},
-  { path: RoutingEnum.Recipe, component: RecipeComponent },
-  { path: RoutingEnum.Home, component: HomeComponent },
-  { path: "", redirectTo: "/home", pathMatch: "full" },//all'inizio accederà ad home
+  { path: RoutingEnum.List, component: ListComponent, canActivate: [AuthguardService] },
+  { path: RoutingEnum.Recipe, component: RecipeComponent, canActivate: [AuthguardService] },
+  { path: RoutingEnum.Home, component: HomeComponent ,canActivate: [HomeAuthguardService]},
+  { path: "", redirectTo: "/" + RoutingEnum.Home, pathMatch: "full" },//all'inizio accederà ad home
   { path: "**", component: PageNotFoundComponent }
 ];
 
