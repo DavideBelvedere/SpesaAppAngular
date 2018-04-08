@@ -18,7 +18,7 @@
                         <a class="option" routerLink="/{{item.route}}">{{item.title}}</a>
                     </div>
                 </ng-container>
-                <img (click)="isProfileClickedFun()" *ngIf="isLogged" id="profile" src="../../../assets/img/profile.png" alt="profile">
+                <img (click)="isProfileClickedFun()" *ngIf="isLogged" id="profile" src="{{currentUser?.imgProfile}}" alt="profile">
             </ul>
 
         </div>
@@ -29,5 +29,5 @@
     <a>{{currentUser.username}}</a>
     <p>{{currentUser.email}}</p>
     <hr>
-    <a>Logout</a>
+    <a (click)="doLogout()">Logout</a>
 </div>

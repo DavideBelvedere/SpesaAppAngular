@@ -19,5 +19,6 @@ export class LoginMockService {
 export const LoginMock =
     {
         username: "Mario Rossi",
-        email: "mario.rossi@gmail.com"
+        email: "mario.rossi@gmail.com",
+        imgProfile: "../../assets/img/image-profile.png"
     }

@@ -13,6 +13,7 @@ import { HttpService } from './Services/HttpRequest/http.service';
 import { LoginService } from './Services/HttpRequest/HttpUtilityService/login.service';
 import { HomeComponent } from './Components/home/home.component';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
+import { LoggedComponentsComponent } from './Components/logged-components/logged-components.component';
 
 
 
@@ -25,6 +26,7 @@ import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http'
     FooterComponent,
     PageNotFoundComponent,
     HomeComponent,
+    LoggedComponentsComponent,
  
   
   ],

@@ -46,6 +46,10 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  doLogout(){
+    this.loginService.logout();
+    this.isProfileClicked=false;
+  }
   ngOnInit() {
   }
 

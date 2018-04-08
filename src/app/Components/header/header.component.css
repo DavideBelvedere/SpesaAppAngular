@@ -93,6 +93,7 @@ hr {
     font-size: 17px;
     margin: 8px 8px;
     color: rgb(66, 136, 228);
+    cursor: pointer;
 }
 
 .profileDiv>p {
