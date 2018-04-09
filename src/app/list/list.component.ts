@@ -14,6 +14,7 @@ import { Textbox } from '../Model/Textbox';
 })
 export class ListComponent implements OnInit {
 
+  list: string;
   constructor( private modalService: ModalDataService) { }
 
   ngOnInit() {
@@ -21,7 +22,7 @@ export class ListComponent implements OnInit {
 
 
   openModalDelete() {
-    this.modalService.showModal(new ModalData("elimina lista","vuoi eliminare la lista?", new Buttons("Annulla",()=>{this.modalService.hideModal()}), new Buttons("Conferma", () => { console.log("confirm!") }), null, null));
+    this.modalService.showModal(new ModalData("elimina lista","vuoi eliminare la lista " + this.list + " ?", new Buttons("Annulla",()=>{this.modalService.hideModal()}), new Buttons("Conferma", () => { console.log("confirm!") }), null, null));
   }
   
 
