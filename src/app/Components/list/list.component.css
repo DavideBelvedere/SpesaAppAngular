@@ -1,0 +1,50 @@
+.list_container {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.single_list {
+    margin: 10px;
+    width: 18%;
+    height: 170px;
+    overflow: hidden;
+    position: relative;
+}
+
+.name_list {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(37, 157, 212, 0.527);
+    font-size: 18px;
+    text-align: center;
+    padding: 3px;
+    color: white;
+}
+
+.edit_hover {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.644);
+    width: 100%;
+    padding: 2px;
+    display: none;
+}
+
+.icon {
+    float: left;
+    width: 33%;
+    line-height: 40px;
+}
+
+.single_list:hover {
+    cursor: pointer;
+}
+
+.edit_hover:hover {
+    display: block;
+}

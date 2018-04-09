@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { ModalComponent } from './modal/modal.component';
+
 import { ListComponent } from './Components/list/list.component';
 import { RecipeComponent } from './Components/recipe/recipe.component';
 import { FooterComponent } from './Components/footer/footer.component';
@@ -16,6 +16,7 @@ import { ModalDataService } from './Services/modal.data.service';
 import { FormsModule } from '@angular/forms';
 import { AuthguardService } from './Routing/Authguard/authguard.service';
 import { HomeAuthguardService } from './Routing/Authguard/home-authguard.service';
+import { ModalComponent } from './Components/modal/modal.component';
 
 
 
