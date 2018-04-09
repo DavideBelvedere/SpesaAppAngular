@@ -4,6 +4,7 @@ import { ListService } from './list.service';
 import { ModalData } from './modal/modal.data';
 import { LoginService } from './Services/HttpRequest/HttpUtilityService/login.service';
 import { ModalDataService } from './Services/modal.data.service';
+import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +12,12 @@ import { ModalDataService } from './Services/modal.data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isLogged: boolean = false;
+  showHeader:boolean=true;
   title = 'app';
 
   modal : ModalData;
   showModal: boolean;
-  
+  isLogged : boolean = false;
 
   constructor(private modalDataService : ModalDataService, private loginService: LoginService){ 
     this.modalDataService.modalData$.subscribe(modal => {
@@ -29,5 +30,6 @@ export class AppComponent {
     })
   }
 
+ 
 }
 

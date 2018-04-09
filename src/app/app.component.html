@@ -1,8 +1,9 @@
 <modal *ngIf="showModal" [modalData]="modal"></modal>
 
-<list></list>
 <header></header>
-<home *ngIf="!isLogged"></home>
-<!--<logged-components *ngIf="isLogged"></logged-components>
-<loader *ngIf="showLoader"></loader>-->
+
+
+<header *ngIf="showHeader"></header>
+
+<router-outlet></router-outlet>
 <footer></footer>

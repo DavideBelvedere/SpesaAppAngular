@@ -15,7 +15,8 @@ import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http'
 import { HeaderComponent } from './Components/header/header.component';
 import { ModalDataService } from './Services/modal.data.service';
 import { FormsModule } from '@angular/forms';
-
+import { AuthguardService } from './Routing/Authguard/authguard.service';
+import { HomeAuthguardService } from './Routing/Authguard/home-authguard.service';
 
 
 
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     PageNotFoundComponent,
     HomeComponent,
+
  
   
   ],
@@ -39,7 +41,7 @@ import { FormsModule } from '@angular/forms';
     CustomRouterModule,
     FormsModule
   ],
-  providers: [ModalDataService, ListService,HttpService, LoginService],
+  providers: [ModalDataService, ListService,HttpService, LoginService,  AuthguardService, HomeAuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
