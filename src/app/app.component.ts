@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import { ListService } from './list.service';
 import { ModalData } from './modal/modal.data';
 import { LoginService } from './Services/HttpRequest/HttpUtilityService/login.service';
 import { ModalDataService } from './Services/modal.data.service';

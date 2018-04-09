@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ModalComponent } from './modal/modal.component';
-import { ListService } from './list.service';
 import { ListComponent } from './Components/list/list.component';
 import { RecipeComponent } from './Components/recipe/recipe.component';
 import { FooterComponent } from './Components/footer/footer.component';
@@ -41,7 +40,7 @@ import { HomeAuthguardService } from './Routing/Authguard/home-authguard.service
     CustomRouterModule,
     FormsModule
   ],
-  providers: [ModalDataService, ListService,HttpService, LoginService,  AuthguardService, HomeAuthguardService],
+  providers: [ModalDataService,HttpService, LoginService,  AuthguardService, HomeAuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

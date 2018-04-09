@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import { ListService } from '../list.service';
+
 import { ModalData } from './modal.data';
 import { ModalDataService } from '../Services/modal.data.service';
 import { NgModule } from '@angular/core';
@@ -23,7 +23,7 @@ export class ModalComponent implements OnInit {
   modalData: ModalData;
 
   modalDelete: Object;
-  constructor(private listService: ListService, private modalDataService: ModalDataService, private loginService: LoginService) {
+  constructor( private modalDataService: ModalDataService, private loginService: LoginService) {
   }
 
   ngOnInit() {
