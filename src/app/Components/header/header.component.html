@@ -6,7 +6,7 @@
                 <a href="#{{item.route}}">{{item.title}}</a>
             </ng-container>
 
-            <button>ACCEDI</button>
+            <button (click)="openModalLogin()">ACCEDI</button>
         </ul>
 
         <ul *ngIf="isLogged">

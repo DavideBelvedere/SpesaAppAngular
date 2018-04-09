@@ -7,16 +7,18 @@
     <div class="text" [innerHtml]="modalData.subtitle"></div>
 
     <div class="login" *ngIf="modalData.showLogin">
-        <label>Email:</label>
-        <input type="text" class="email">
-        <label>Password</label>
-        <input type="password" class="password">
+        <!-- 
+        <label class="labelEmail">{{modalData.textbox.label}}</label><br>
+        <input class="email" type="text" id="text" [(ngModel)]="name" value="{{modalData.textbox.setValue(name)}}"><br>
+        <label class="labelPassword">Password:</label><br>
+        <input type="password" class="password" [(ngModel)]="password"><br>
+-->
     </div>
 
-    <div class="">
 
-
-
+    <div class="login" *ngFor="let textbox of modalData.textboxs">
+        <label class="labelEmail">{{textbox.label}}</label><br>
+        <input class="email" type="{{textbox.type}}" [(ngModel)]="textbox.key" value="{{textbox.setValue(textbox.key)}}"><br>
     </div>
 
     <div class="buttons" *ngIf="modalData.undo.show || modalData.confirm.show">

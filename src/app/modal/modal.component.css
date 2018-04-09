@@ -10,19 +10,8 @@
     overflow: hidden;
 }
 
-#modal-confirm {
-    width: 30%;
-    height: 250px;
-    margin-left: 35%;
-    margin-top: 10%;
-    border: 1px solid gray;
-    z-index: 999;
-    position: fixed;
-    background-color: white;
-}
-
 .title {
-    background-color: aqua;
+    background-color: rgb(37, 157, 212);
     color: white;
     padding: 20px;
     font-size: 30px;
@@ -38,25 +27,28 @@
     padding: 10px;
     float: left;
     font-size: 20px;
-    border: aqua 1px solid;
-    color: aqua;
+    border: 1px solid rgb(37, 157, 212);
+    color: rgb(37, 157, 212);
     width: 40%;
     box-shadow: 17px 12px 17px -4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
 }
 
 .conferma {
     padding: 10px;
     font-size: 20px;
-    background-color: aqua;
-    border: 1px solid aqua;
+    background-color: rgb(37, 157, 212);
     color: white;
     width: 40%;
     float: right;
     box-shadow: 17px 12px 17px -4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
 }
 
 .buttons {
     padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .annulla,
@@ -65,10 +57,35 @@
 }
 
 .input {
-    width: 400px;
+    width: 30%;
     background-color: white;
     position: fixed;
     z-index: 5;
     top: 200px;
-    left: 300px;
+    left: 35%;
+}
+
+.login {
+    text-align: left;
+    padding-left: 30px;
+}
+
+.labelEmail,
+.labelPassword {
+    font-size: 18px;
+    margin-top: 10px;
+    color: gray;
+}
+
+.email,
+.password {
+    margin-top: 5px;
+    width: 60%;
+    font-size: 18px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid gray;
+    list-style-type: none;
+    margin-bottom: 15px;
 }

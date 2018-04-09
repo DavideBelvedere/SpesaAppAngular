@@ -1,9 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { ListService } from '../list.service';
-import { ModalDataService } from './modal.data.service';
 import { ModalData } from './modal.data';
-import { NgModel } from '@angular/forms';
+import { ModalDataService } from '../Services/modal.data.service';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { LoginService } from '../Services/HttpRequest/HttpUtilityService/login.service';
+import { User } from '../Model/User';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'modal',
@@ -12,11 +16,14 @@ import { NgModel } from '@angular/forms';
 })
 export class ModalComponent implements OnInit {
 
+  email: string;
+  password: string;
+
   @Input()
   modalData: ModalData;
 
   modalDelete: Object;
-  constructor(private listService: ListService, private modalDataService: ModalDataService) {
+  constructor(private listService: ListService, private modalDataService: ModalDataService, private loginService: LoginService) {
 
     
   }
@@ -24,20 +31,8 @@ export class ModalComponent implements OnInit {
   ngOnInit() {
   }
 
-  confirm() {
-
-  }
-
-email : string;
-password: string;
-
   back() {
     this.listService.setModal(false);
   }
-
-  login(email : string, password: string){
-    this.modalDataService.takeLogin(email, password);
-  }
-
 
 }
