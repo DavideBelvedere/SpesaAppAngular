@@ -3,27 +3,27 @@
 
 <div class="input">
 
-    <div class="title">{{modalData.title}}</div>
+    <div class="title">{{modalData.title}}
+        <div class="closeModal" (click)="close()"></div>
+    </div>
     <div class="text" [innerHtml]="modalData.subtitle"></div>
 
-    <div class="login" *ngIf="modalData.showLogin">
-
+    <div *ngIf="modalData.showPhotoAdd">
+        <input id="file-input" hidden type="file" name="pic" accept="image/*">
+        <label for="file-input">
+            <div class="photoAdd">
+                <img src="../../assets/img/camera_2.png">
+            </div>
+        </label>
     </div>
-
-
     <div class="login" *ngFor="let textbox of modalData.textboxs">
         <label class="labelEmail">{{textbox.label}}</label><br>
         <input class="email" type="{{textbox.type}}" [(ngModel)]="textbox.key" value="{{textbox.setValue(textbox.key)}}"><br>
     </div>
 
+    <hr class="divider">
     <div class="buttons" *ngIf="modalData.undo.show || modalData.confirm.show">
         <div class="annulla" *ngIf="modalData.undo.show" (click)="modalData.undo.callback()">{{modalData.undo.title}}</div>
         <div class="conferma" *ngIf="modalData.confirm.show" (click)="modalData.confirm.callback()">{{modalData.confirm.title}}</div>
     </div>
-
-</div>
-
-<div>
-
-
 </div>

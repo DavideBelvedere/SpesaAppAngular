@@ -18,6 +18,33 @@
     text-align: center;
 }
 
+.closeModal {
+    float: right;
+    width: 20px;
+    height: 20px;
+    background-image: url("../../assets/img/cancel_white.png");
+}
+
+.closeModal:hover {
+    cursor: pointer;
+}
+
+.photoAdd {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    margin-bottom: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.photoAdd img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
 .text {
     padding: 20px;
     font-size: 20px;
@@ -61,7 +88,7 @@
     background-color: white;
     position: fixed;
     z-index: 5;
-    top: 200px;
+    top: 150px;
     left: 35%;
 }
 
@@ -88,4 +115,9 @@
     border-bottom: 2px solid gray;
     list-style-type: none;
     margin-bottom: 15px;
+}
+
+.divider {
+    width: 90%;
+    margin-left: 5%;
 }

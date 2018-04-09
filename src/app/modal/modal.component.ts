@@ -24,15 +24,17 @@ export class ModalComponent implements OnInit {
 
   modalDelete: Object;
   constructor(private listService: ListService, private modalDataService: ModalDataService, private loginService: LoginService) {
-
-    
   }
 
   ngOnInit() {
   }
 
-  back() {
-    this.listService.setModal(false);
+  chargePhoto(){
+    console.log("photooo");
+  }
+
+  close() {
+    this.modalDataService.hideModal();
   }
 
 }

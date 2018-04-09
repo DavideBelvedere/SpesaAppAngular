@@ -25,19 +25,4 @@ export class ModalDataService {
   }
 
   email : string;
-
-
-
-  /*doLogin() {
-    this.loginService.executeLogin(user,
-      (response) => {
-        console.log("success");
-        sessionStorage.setItem("user", JSON.stringify(response));
-        this.loginService.nextLogged(true);
-        //this.router.navigate(["/" + RoutingEnum.Home]);
-      }, (error) => {
-        console.log("error");
-      });
-  }
-*/
 }
