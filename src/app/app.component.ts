@@ -23,9 +23,8 @@ export class AppComponent {
     this.modalDataService.modalData$.subscribe(modal => {
       this.modal = modal;
       this.showModal = modal != null && modal != undefined;
-
-     
     });
+     
     this.loginService.logged$.subscribe((login: boolean) => {
       this.isLogged = login;
     });

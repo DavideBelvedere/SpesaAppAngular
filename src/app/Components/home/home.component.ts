@@ -10,22 +10,10 @@ import { RoutingEnum } from '../../Model/Enum/RoutingEnum';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  private user: User = new User("prova", "prova");
-  constructor(private loginService: LoginService, private router: Router) { }
+  
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  doLogin() {
-    this.loginService.executeLogin(this.user,
-      (response) => {
-        console.log("success");
-        sessionStorage.setItem("user", JSON.stringify(response));
-        this.loginService.nextLogged(true);
-        this.router.navigate(["/" + RoutingEnum.List]);
-      }, (error) => {
-        console.log("error");
-      });
   }
   
 }
