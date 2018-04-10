@@ -16,6 +16,11 @@ import { ModalDataService } from './Services/modal.data.service';
 import { FormsModule } from '@angular/forms';
 import { AuthguardService } from './Routing/Authguard/authguard.service';
 import { HomeAuthguardService } from './Routing/Authguard/home-authguard.service';
+import { ListService } from './Services/HttpRequest/HttpUtilityService/list.service';
+import { ListMockService } from './Mock/list-mock.service';
+import { AddListMockService } from './Mock/add-list-mock.service';
+import { RemoveListMockService } from './Mock/remove-list-mock.service';
+import { UpdateListMockService } from './Mock/update-list-mock.service';
 
 
 
@@ -40,7 +45,7 @@ import { HomeAuthguardService } from './Routing/Authguard/home-authguard.service
     CustomRouterModule,
     FormsModule
   ],
-  providers: [ModalDataService,HttpService, LoginService,  AuthguardService, HomeAuthguardService],
+  providers: [ModalDataService,HttpService, LoginService,  AuthguardService, HomeAuthguardService, ListService, ListMockService, AddListMockService, RemoveListMockService, UpdateListMockService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

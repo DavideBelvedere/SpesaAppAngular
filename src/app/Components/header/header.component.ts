@@ -37,6 +37,7 @@ export class HeaderComponent implements OnInit {
     new Textbox("", "Email", true, "email", "text"),
     new Textbox("", "Password", true, "password", "password")
   ];
+
   openModalLogin() {
     this.modalService.showModal(new ModalData("Login", null, new Buttons("Conferma", () => { this.login() }), new Buttons("annulla", () => { this.modalService.hideModal() }), true, this.textboxs));
     for (let i = 0; i < this.textboxs.length; i++) {
@@ -77,6 +78,7 @@ export class HeaderComponent implements OnInit {
       this.currentUser = null;
     }
   }
+  
   login() {
     let user: User = new User(this.textboxs[0].getValue(), this.textboxs[1].getValue());
     this.loginService.executeLogin(user,
