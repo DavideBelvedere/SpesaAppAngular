@@ -1,19 +1,23 @@
 <div class="list_container">
 
     <div>
-        <div class="single_list" (mouseover)="getStyle(true)" (mouseleave)="getStyle(false)">
-            <div class="listName" *ngIf="show">michele</div>
+        <div class="single_list" *ngFor="let item of lists" (mouseover)="showInfo(item.id, true)" (mouseleave)="showInfo(item.id, false)">
+            <div class="listName" *ngIf="item.info">{{item.name}}</div>
 
-            <div class="name_list" *ngIf="show == false" [style.display]="'block'">
-                michele
+            <div class="name_list" *ngIf="item.info == false" [style.display]="'block'">
+                {{item.name}}
             </div>
             <img src="../../../assets/img/carne.jpeg">
-            <div class="edit_hover" *ngIf="show" (mouseover)="getStyle(true)" [style.display]="'block'">
+            <div class="edit_hover" *ngIf="item.info" (mouseover)="showInfo(item.id, true)" [style.display]="'block'">
                 <div class="icon"><img src="../../../assets/img/modify.png"></div>
                 <div class="icon"><img src="../../../assets/img/send.png"></div>
-                <div class="icon"><img src="../../../assets/img/delete.png"></div>
+                <div class="icon" (click)="openModalDelete(item.name)"><img src="../../../assets/img/delete.png"></div>
             </div>
         </div>
     </div>
 
+
+    <div class="addListCont" (click)="openModalAddList()">
+        +
+    </div>
 </div>

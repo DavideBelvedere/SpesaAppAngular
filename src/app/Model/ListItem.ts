@@ -8,8 +8,9 @@ export class ListItem{
     user : User;
     imgUrl: string;
     list : Item[];
+    info : boolean;
 
-    constructor(id : number, name: string, user : User, imgUrl :string, list : Item[] = null){
+    constructor(id : number, name: string, user : User, imgUrl :string, list : Item[] = null,info: boolean = false){
         this.id = id;
         this.name = name;
         this.user = user;
@@ -21,6 +22,9 @@ export class ListItem{
         this.imgUrl = value;
     }
 
+    showInfo(value:boolean){
+        this.info = value;
+    }
     setName(value:string){
         this.name = name;
     }

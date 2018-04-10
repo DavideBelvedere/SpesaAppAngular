@@ -10,6 +10,7 @@
     height: 170px;
     overflow: hidden;
     position: relative;
+    float: left;
 }
 
 .name_list {
@@ -61,4 +62,23 @@
 
 .edit_hover:hover {
     display: block;
+}
+
+.addListCont {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 400%;
+    text-align: center;
+    line-height: 70px;
+    position: absolute;
+    bottom: 90px;
+    right: 90px;
+    background-color: orange;
+    color: white;
+    border: 1px solid orangered;
+}
+
+.addListCont:hover {
+    cursor: pointer;
 }
