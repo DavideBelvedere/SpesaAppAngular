@@ -22,6 +22,19 @@
     text-align: center;
     padding: 3px;
     color: white;
+    display: block;
+}
+
+.listName {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.644);
+    font-size: 18px;
+    text-align: center;
+    padding: 3px;
+    color: white;
 }
 
 .edit_hover {
@@ -38,7 +51,8 @@
 .icon {
     float: left;
     width: 33%;
-    line-height: 40px;
+    padding-bottom: 2px;
+    padding-top: 2px;
 }
 
 .single_list:hover {

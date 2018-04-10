@@ -1,16 +1,19 @@
 <div class="list_container">
 
     <div>
-        <div class="single_list" (mouseover)="getStyle()">
-            <div class="name_list">
-                <div class="listName">michele</div>
+        <div class="single_list" (mouseover)="getStyle(true)" (mouseleave)="getStyle(false)">
+            <div class="listName" *ngIf="show">michele</div>
+
+            <div class="name_list" *ngIf="show == false" [style.display]="'block'">
+                michele
             </div>
             <img src="../../../assets/img/carne.jpeg">
-            <div class="edit_hover">
+            <div class="edit_hover" *ngIf="show" (mouseover)="getStyle(true)" [style.display]="'block'">
                 <div class="icon"><img src="../../../assets/img/modify.png"></div>
                 <div class="icon"><img src="../../../assets/img/send.png"></div>
                 <div class="icon"><img src="../../../assets/img/delete.png"></div>
             </div>
         </div>
     </div>
+
 </div>

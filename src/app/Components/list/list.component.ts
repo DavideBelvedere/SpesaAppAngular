@@ -17,7 +17,7 @@ import { createElement } from '@angular/core/src/view/element';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-
+   show : boolean = false; 
   list: string;
   constructor(private modalService: ModalDataService) { }
 
@@ -39,5 +39,8 @@ export class ListComponent implements OnInit {
 
   lists: ListItem[];
 
-  
+  getStyle(value : boolean){
+   this.show = value;
+   console.log(value)
+  }
 }
