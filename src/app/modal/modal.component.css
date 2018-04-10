@@ -1,0 +1,123 @@
+.veil {
+    position: fixed;
+    opacity: 0.4;
+    z-index: 3;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+
+.title {
+    background-color: rgb(37, 157, 212);
+    color: white;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.closeModal {
+    float: right;
+    width: 20px;
+    height: 20px;
+    background-image: url("../../assets/img/cancel_white.png");
+}
+
+.closeModal:hover {
+    cursor: pointer;
+}
+
+.photoAdd {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    margin-bottom: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.photoAdd img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.text {
+    padding: 20px;
+    font-size: 20px;
+}
+
+.annulla {
+    padding: 10px;
+    float: left;
+    font-size: 20px;
+    border: 1px solid rgb(37, 157, 212);
+    color: rgb(37, 157, 212);
+    width: 40%;
+    box-shadow: 17px 12px 17px -4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+
+.conferma {
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgb(37, 157, 212);
+    color: white;
+    width: 40%;
+    float: right;
+    box-shadow: 17px 12px 17px -4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+
+.buttons {
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.annulla,
+.conferma:hover {
+    cursor: pointer;
+}
+
+.input {
+    width: 30%;
+    background-color: white;
+    position: fixed;
+    z-index: 5;
+    top: 150px;
+    left: 35%;
+}
+
+.login {
+    text-align: left;
+    padding-left: 30px;
+}
+
+.labelEmail,
+.labelPassword {
+    font-size: 18px;
+    margin-top: 10px;
+    color: gray;
+}
+
+.email,
+.password {
+    margin-top: 5px;
+    width: 60%;
+    font-size: 18px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid gray;
+    list-style-type: none;
+    margin-bottom: 15px;
+}
+
+.divider {
+    width: 90%;
+    margin-left: 5%;
+}

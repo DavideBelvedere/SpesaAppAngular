@@ -1,0 +1,141 @@
+.navbar {
+    width: 100%;
+    height: 60px;
+    background: white;
+    position: fixed;
+    z-index: 10;
+    display: block;
+    top: 0;
+    left: 0;
+    -webkit-box-shadow: 0px 7px 20px -1px rgba(117, 115, 117, 0.66);
+    -moz-box-shadow: 0px 7px 20px -1px rgba(117, 115, 117, 0.66);
+    box-shadow: 0px 7px 20px -1px rgba(117, 115, 117, 0.66);
+}
+
+ul {
+    margin: 0;
+}
+
+.navDiv {
+    float: right;
+    margin: 0 15px 0 0;
+}
+
+.optionDiv {
+    padding: 19px 15px 0 15px;
+    display: inline-block;
+    height: 60px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.option {
+    display: inline-block;
+    color: black;
+    font-size: 17px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button {
+    margin-left: 15px;
+    background: rgb(37, 157, 212);
+    color: white;
+    border-color: rgb(37, 157, 212);
+    font-size: 17px;
+    padding: 3px 10px 3px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.active {
+    border-bottom: 3px solid rgb(8, 2, 58);
+}
+
+#logo {
+    margin-left: 15px;
+    height: 30px;
+    margin-top: 13px;
+    cursor: pointer;
+}
+
+#profile {
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    float: right;
+    margin: 9px 0px 0px 10px;
+}
+
+.active {
+    border-bottom: solid 3px rgb(3, 28, 61);
+}
+
+.profileDiv {
+    width: 300px;
+    height: auto;
+    margin: 55px 15px 0 0;
+    z-index: 11;
+    position: relative;
+    float: right;
+    background: white;
+    padding: 8px 3px;
+    -webkit-box-shadow: 0px 7px 20px -1px rgba(117, 115, 117, 0.66);
+    -moz-box-shadow: 0px 7px 20px -1px rgba(117, 115, 117, 0.66);
+    box-shadow: 0px 7px 20px -1px rgba(117, 115, 117, 0.66);
+}
+
+hr {
+    margin: 0 0 8px 0;
+}
+
+.profileDiv>a {
+    font-size: 17px;
+    margin: 8px 8px;
+    color: rgb(66, 136, 228);
+    cursor: pointer;
+}
+
+.profileDiv>p {
+    font-size: 14px;
+    margin: 2px 8px;
+    color: slategray;
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 800px) and (orientation: portrait) {
+    button {
+        font-size: 14px;
+        padding: 3px 10px 3px 10px;
+        border-radius: 10px;
+    }
+    option {
+        font-size: 14px;
+    }
+}
