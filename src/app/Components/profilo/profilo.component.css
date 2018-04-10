@@ -1,7 +1,8 @@
 /* GRID SYSTEM */
+
 .mainContainer {
-       display: -ms-grid;
-    display: grid;    
+    display: -ms-grid;
+    display: grid;
     -ms-grid-rows: auto;
     grid-auto-rows: minmax(100px, auto);
     -ms-grid-columns: 1fr 1fr 1fr;
@@ -14,7 +15,6 @@
     grid-row: 1;
     -ms-grid-column: 1;
     grid-column: 1;
-
 }
 
 .col2 {
@@ -32,8 +32,26 @@
     -ms-grid-row: 1;
 }
 
+.recap {
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-column: 2;
+    grid-column: 2;
+    -ms-grid-column: 3;
+    grid-column: 3;
+    width: 100%;
+    grid-row: 1;
+    -ms-grid-row: 1;
+    margin-top: 3%;
+    font-family: 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
-.mainImage{
+.recap p {
+    margin: 0;
+    padding-left: 3%;
+}
+
+.mainImage {
     -ms-grid-column: 2;
     grid-column: 2;
     text-align: center;
@@ -42,8 +60,7 @@
     -ms-grid-row: 2;
 }
 
-
-#cam{
+#cam {
     position: relative;
     right: 7%;
     bottom: 0%;
@@ -54,15 +71,14 @@
     border: solid 16px lightblue;
 }
 
-#face{
+#face {
     position: relative;
     z-index: 1;
     width: 40%;
     left: 5%;
 }
 
-
-.mainText{
+.mainText {
     -ms-grid-column: 2;
     grid-column: 2;
     text-align: center;
@@ -71,15 +87,15 @@
     -ms-grid-row: 3;
 }
 
-.staticText{
+.staticText {
     color: #999999;
 }
 
-.dynamicText{
+.dynamicText {
     color: #295067;
 }
 
-.mainStyle{
+.mainStyle {
     font-family: 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 21px;
 }

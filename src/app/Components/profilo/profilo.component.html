@@ -1,16 +1,22 @@
+<div class="recap">
+    <p class="dynamicText">Benvenuto <b>{{getUser().username}}</b></p>
+    <p class="staticText">Modifica le impostazioni di base del tuo account</p>
+    <hr>
+</div>
 <div class="mainStyle">
-  <div class="mainContainer" >
-    <div class="mainImage">
-  <img src="../../../assets/Risorse utili/img_profile.png" id="face">
-  <img src="../../../assets/Risorse utili/camera.png" id="cam">
-</div>
 
-<div class="mainText">
-  <p class="staticText"> Nome utente</p>
-  <h2 class="dynamicText">{{getUser().username}}</h2>
-  <hr>
-  <p class="staticText">e-mail</p>
-  <h2 class="dynamicText">{{getUser().email}}</h2>
-</div>
-</div>
+    <div class="mainContainer">
+        <div class="mainImage">
+            <img src="../../../assets/Risorse utili/img_profile.png" id="face">
+            <img src="../../../assets/Risorse utili/camera.png" id="cam">
+        </div>
+
+        <div class="mainText">
+            <p class="staticText"> Nome utente</p>
+            <h2 class="dynamicText">{{getUser().username}}</h2>
+            <hr>
+            <p class="staticText">e-mail</p>
+            <h2 class="dynamicText">{{getUser().email}}</h2>
+        </div>
+    </div>
 </div>
