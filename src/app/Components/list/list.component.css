@@ -65,12 +65,12 @@
 }
 
 .addListCont {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    font-size: 400%;
+    font-size: 300%;
     text-align: center;
-    line-height: 70px;
+    line-height: 55px;
     position: absolute;
     bottom: 90px;
     right: 90px;
