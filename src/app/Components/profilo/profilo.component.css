@@ -1,16 +1,12 @@
-
 /* GRID SYSTEM */
 .mainContainer {
-    padding-top: 100px;
-    display: -ms-grid;
+       display: -ms-grid;
     display: grid;    
     -ms-grid-rows: auto;
     grid-auto-rows: minmax(100px, auto);
     -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 5px;
-    font-size: 24;
-
 }
 
 .col1 {
@@ -76,9 +72,14 @@
 }
 
 .staticText{
-    color: grey;
+    color: #999999;
 }
 
 .dynamicText{
-    color: indigo;
+    color: #295067;
+}
+
+.mainStyle{
+    font-family: 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 21px;
 }
