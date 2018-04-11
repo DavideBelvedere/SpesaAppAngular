@@ -34,16 +34,25 @@ export class ListComponent implements OnInit {
   openModalDelete(name: string) {
     this.modalService.showModal(new ModalData("elimina lista", "vuoi eliminare la lista <strong>" + name + "</strong> ?", new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { console.log("confirm!") }), null, null));
   }
-  textboxs: Textbox[] = [
-    new Textbox("nome della lista", null, true, "nome lista", "text"),
-    new Textbox("descrizione", null, true, "descrizione", "text")
+  textboxAdd: Textbox[] = [
+    new Textbox("nome della lista", "nome lista:", true, "nome lista", "text"),
+    new Textbox("descrizione", "descrizione:", true, "descrizione", "text")
   ];
 
   openModalAddList() {
-    this.modalService.showModal(new ModalData("Aggiungi lista", null, new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { console.log(this.textboxs[0].getValue(), this.textboxs[1].getValue()) }), true, this.textboxs))
+    this.modalService.showModal(new ModalData("Aggiungi lista", null, new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { console.log(this.textboxAdd[0].getValue(), this.textboxAdd[1].getValue()) }), true, this.textboxAdd))
   }
 
+  
 
+openModalEditList(id: number, listName: string, listDesc : string ){
+
+  let textboxEdit: Textbox[] = [
+    new Textbox( listName , "nome lista:", true, listName, "text"),
+    new Textbox(listDesc, "descrizione:", true, listDesc, "text")
+  ]
+  this.modalService.showModal(new ModalData("Modifica lista", null, new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { console.log(textboxEdit[0].getValue(), textboxEdit[1].getValue()) }), true, textboxEdit))
+}
 
   user : User = new User("matteo","bell","eff","def");
 
