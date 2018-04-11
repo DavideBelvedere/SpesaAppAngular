@@ -9,6 +9,7 @@ import { ListItem } from '../../Model/ListItem';
 import { createElement } from '@angular/core/src/view/element';
 import { User } from '../../Model/User';
 import { Item } from '../../Model/item';
+import { Router } from '@angular/router';
 
 
 
@@ -83,7 +84,9 @@ openModalEditList(id: number, listName: string, listDesc : string ){
   }
 
   
-
+selectList(item : ListItem){
+ 
+}
  
 
 }

@@ -17,6 +17,8 @@ import { FormsModule } from '@angular/forms';
 import { AuthguardService } from './Routing/Authguard/authguard.service';
 import { HomeAuthguardService } from './Routing/Authguard/home-authguard.service';
 import { ModalComponent } from './Components/modal/modal.component';
+import { DetailComponent } from './Components/detail/detail.component';
+
 
 
 
@@ -31,9 +33,7 @@ import { ModalComponent } from './Components/modal/modal.component';
     FooterComponent,
     PageNotFoundComponent,
     HomeComponent,
-
- 
-  
+    DetailComponent
   ],
   imports: [
     HttpClientModule,
