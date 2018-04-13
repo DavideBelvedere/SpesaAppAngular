@@ -46,15 +46,17 @@ export class HttpService {
       //   }
       // )
     } else { // se è mock
-      let mock;
+      
       if (idurl == 'mocked') {
         let mock: LoginMockService = new LoginMockService();
+        callback(mock.getMock(idurl));
 
       } else if (idurl == 'mockedList') {
         let mock: ListMockService = new ListMockService();
+        callback(mock.getMock(idurl));
 
       }
-      callback(mock.getMock(idurl));
+      
     }
 
   }
@@ -100,7 +102,7 @@ export class HttpService {
     }
   }
 
-  callDelete(idUrl: string, header: HttpHeaders = null, callback = null, errorCallback = null) {
+  callDelete(id: string,idUrl: string, header: HttpHeaders = null, callback = null, errorCallback = null) {
     if (!environment.useMock) {
     // this.http.delete(this.utilityService.getBaseUrl() + url, { headers: this.getAuthHeader(header), observe: 'response' }).subscribe(
     //   response => {

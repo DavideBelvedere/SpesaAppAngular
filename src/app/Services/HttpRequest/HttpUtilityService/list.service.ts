@@ -63,7 +63,7 @@ export class ListService {
   }
 
   addList(body: ListItem, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
-    this.httpService.callPut(
+    this.httpService.callPost(
       body,
       'addMockedList',
       null,
@@ -77,9 +77,9 @@ export class ListService {
       });
   }
 
-  removeList(callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
+  removeList(id: string, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
     this.httpService.callDelete(
-
+      id,
       'removeMockedList',
       null,
       (response) => {

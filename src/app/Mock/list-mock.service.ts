@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import { ListItem } from '../Model/ListItem';
-import { Item } from '../Model/Item';
+import { Item } from '../Model/item';
+
+
 
 @Injectable()
 export class ListMockService {
+
+  constructor(){}
 
   getMock(id: string): any {
     return this.serviceMap[id] ? this.serviceMap[id].mock : "";
