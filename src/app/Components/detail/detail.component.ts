@@ -45,9 +45,9 @@ nList : number;
 
   listaone : Item[] = [
     new Item(1,"def","olio","5kg",4,false),
-    new Item(2,"def","olio","5kg",4,false),
-    new Item(3,"def","olio","5kg",4,false),
-    new Item(4,"def","olio","5kg",4,false)
+    new Item(2,"def","aceto","5kg",4,false),
+    new Item(3,"def","timo","5kg",4,false),
+    new Item(4,"def","rosmarino","5kg",4,false)
  ]
 
   lists: ListItem[] = [

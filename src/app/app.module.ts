@@ -18,6 +18,7 @@ import { AuthguardService } from './Routing/Authguard/authguard.service';
 import { HomeAuthguardService } from './Routing/Authguard/home-authguard.service';
 import { ModalComponent } from './Components/modal/modal.component';
 import { DetailComponent } from './Components/detail/detail.component';
+import { RecipeDetailComponent } from './Components/recipe-detail/recipe-detail.component';
 
 
 
@@ -33,7 +34,8 @@ import { DetailComponent } from './Components/detail/detail.component';
     FooterComponent,
     PageNotFoundComponent,
     HomeComponent,
-    DetailComponent
+    DetailComponent,
+    RecipeDetailComponent
   ],
   imports: [
     HttpClientModule,
