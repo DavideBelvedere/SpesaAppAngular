@@ -102,7 +102,7 @@ export class HttpService {
     }
   }
 
-  callDelete(id: string,idUrl: string, header: HttpHeaders = null, callback = null, errorCallback = null) {
+  callDelete(id: number,idUrl: string, header: HttpHeaders = null, callback = null, errorCallback = null) {
     if (!environment.useMock) {
     // this.http.delete(this.utilityService.getBaseUrl() + url, { headers: this.getAuthHeader(header), observe: 'response' }).subscribe(
     //   response => {

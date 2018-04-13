@@ -11,7 +11,7 @@ export class ListItem {
     list: Item[];
     info: boolean;
 
-    constructor(id: number, name: string, user: User, imgUrl: string, list: Item[] = null, info: boolean = false, description = "") {
+    constructor(id: number, name: string, user: User, imgUrl: string="", list: Item[] = null, info: boolean = false, description = "") {
         this.id = id;
         this.name = name;
         this.user = user;

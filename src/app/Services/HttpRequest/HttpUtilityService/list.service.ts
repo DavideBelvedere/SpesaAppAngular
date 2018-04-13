@@ -77,7 +77,7 @@ export class ListService {
       });
   }
 
-  removeList(id: string, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
+  removeList(id: number, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
     this.httpService.callDelete(
       id,
       'removeMockedList',

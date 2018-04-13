@@ -25,6 +25,10 @@ import { ModalComponent } from './Components/modal/modal.component';
 import { DetailComponent } from './Components/detail/detail.component';
 import { SubtitleListComponent } from './Components/subtitle-list/subtitle-list.component';
 import { SubtitleUtilitiesService } from './Services/subtitleUtilities.service';
+import { AddItemMockService } from './Mock/add-item-mock.service';
+import { EditItemMockService } from './Mock/edit-item-mock.service';
+import { RemoveItemMockService } from './Mock/remove-item-mock.service';
+import { ItemService } from './Services/HttpRequest/HttpUtilityService/item.service';
 
 
 
@@ -49,7 +53,7 @@ import { SubtitleUtilitiesService } from './Services/subtitleUtilities.service';
     CustomRouterModule,
     FormsModule
   ],
-  providers: [ModalDataService,HttpService, LoginService,  AuthguardService, HomeAuthguardService, ListService, ListMockService, AddListMockService, RemoveListMockService, UpdateListMockService,SubtitleUtilitiesService],
+  providers: [ModalDataService,HttpService, LoginService,  AuthguardService, HomeAuthguardService, ListService, ListMockService, AddListMockService, RemoveListMockService, UpdateListMockService,SubtitleUtilitiesService,AddItemMockService,RemoveItemMockService, EditItemMockService, ItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
