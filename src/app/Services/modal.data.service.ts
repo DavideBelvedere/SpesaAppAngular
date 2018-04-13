@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Buttons } from '../Model/Buttons';
 import { Subject } from 'rxjs/Subject';
-import { ModalData } from '../modal/modal.data';
+
 import { LoginService } from './HttpRequest/HttpUtilityService/login.service';
 import { User } from '../Model/User';
+import { ModalData } from '../Model/modal.data';
 
 
 @Injectable()

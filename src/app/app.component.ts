@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import { ModalData } from './modal/modal.data';
+
 import { LoginService } from './Services/HttpRequest/HttpUtilityService/login.service';
 import { ModalDataService } from './Services/modal.data.service';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
+import { ModalData } from './Model/modal.data';
 
 @Component({
   selector: 'app-root',

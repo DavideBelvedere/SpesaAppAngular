@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { ModalComponent } from './modal/modal.component';
+
 import { ListComponent } from './Components/list/list.component';
 import { RecipeComponent } from './Components/recipe/recipe.component';
 import { FooterComponent } from './Components/footer/footer.component';
@@ -21,6 +21,9 @@ import { ListMockService } from './Mock/list-mock.service';
 import { AddListMockService } from './Mock/add-list-mock.service';
 import { RemoveListMockService } from './Mock/remove-list-mock.service';
 import { UpdateListMockService } from './Mock/update-list-mock.service';
+import { ModalComponent } from './Components/modal/modal.component';
+import { DetailComponent } from './Components/detail/detail.component';
+
 
 
 
@@ -35,9 +38,7 @@ import { UpdateListMockService } from './Mock/update-list-mock.service';
     FooterComponent,
     PageNotFoundComponent,
     HomeComponent,
-
- 
-  
+    DetailComponent
   ],
   imports: [
     HttpClientModule,

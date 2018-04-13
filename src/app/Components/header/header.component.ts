@@ -3,12 +3,11 @@ import { MenuItem } from '../../Model/headerItem';
 import { RoutingEnum } from '../../Model/Enum/RoutingEnum';
 import { LoginService } from '../../Services/HttpRequest/HttpUtilityService/login.service';
 import { User } from '../../Model/User';
-
-import { ModalData } from '../../modal/modal.data';
 import { Buttons } from '../../Model/Buttons';
 import { ModalDataService } from '../../Services/modal.data.service';
 import { Textbox } from '../../Model/Textbox';
 import { element } from 'protractor';
+import { ModalData } from '../../Model/modal.data';
 
 @Component({
   selector: 'header',
@@ -39,7 +38,7 @@ export class HeaderComponent implements OnInit {
   ];
 
   openModalLogin() {
-    this.modalService.showModal(new ModalData("Login", null, new Buttons("Conferma", () => { this.login() }), new Buttons("annulla", () => { this.modalService.hideModal() }), true, this.textboxs));
+    this.modalService.showModal(new ModalData("Login", null, new Buttons("Conferma", () => { this.login() }), new Buttons("annulla", () => { this.modalService.hideModal() }), null, this.textboxs));
     for (let i = 0; i < this.textboxs.length; i++) {
       this.textboxs[i].key = null;
     }
