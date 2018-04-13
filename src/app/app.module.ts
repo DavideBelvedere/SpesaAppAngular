@@ -30,10 +30,7 @@ import { HomeAuthguardService } from './Routing/Authguard/home-authguard.service
     FooterComponent,
     PageNotFoundComponent,
     HomeComponent,
-
- 
-  
-    HomeComponent
+    FooterComponent
   ],
   imports: [
     HttpClientModule,
