@@ -10,8 +10,8 @@ import { createElement } from '@angular/core/src/view/element';
 import { User } from '../../Model/User';
 import { Item } from '../../Model/item';
 import { Router } from '@angular/router';
-
-
+import { ListService } from '../../Services/HttpRequest/HttpUtilityService/list.service';
+import { SubtitleUtilitiesService } from '../../Services/subtitleUtilities.service';
 
 
 @Component({
@@ -20,17 +20,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-   show : boolean = false; 
-    list: string;
-  constructor(private modalService: ModalDataService) { }
+  show: boolean = false;
+
+  lists: ListItem[];
+  listLength: number;
+  constructor(private modalService: ModalDataService, private listService: ListService, private subtitleUtilitiesService: SubtitleUtilitiesService) { }
 
   ngOnInit() {
-    for(let item of this.lists){
-      this.showInfo(item.id,false);
+    this.getLists();
+    this.listLength = this.lists.length;
+    
+    if (this.listLength == 0) {
+      this.subtitleUtilitiesService.nextNumberList("Nessuna Lista Presente");
+    } else {
+      this.subtitleUtilitiesService.nextNumberList(this.lists.length + " Liste Salvate");
+
+    }
+    for (let item of this.lists) {
+      this.showInfo(item.id, false);
     }
 
   }
-  
+
 
   openModalDelete(name: string) {
     this.modalService.showModal(new ModalData("elimina lista", "vuoi eliminare la lista <strong>" + name + "</strong> ?", new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { console.log("confirm!") }), null, null));
@@ -44,49 +55,40 @@ export class ListComponent implements OnInit {
     this.modalService.showModal(new ModalData("Aggiungi lista", null, new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { console.log(this.textboxAdd[0].getValue(), this.textboxAdd[1].getValue()) }), true, this.textboxAdd))
   }
 
-  
+  openModalEditList(id: number, listName: string, listDesc: string) {
 
-openModalEditList(id: number, listName: string, listDesc : string ){
-
-  let textboxEdit: Textbox[] = [
-    new Textbox( listName , "nome lista:", true, listName, "text"),
-    new Textbox(listDesc, "descrizione:", true, listDesc, "text")
-  ]
-  this.modalService.showModal(new ModalData("Modifica lista", null, new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { console.log(textboxEdit[0].getValue(), textboxEdit[1].getValue()) }), true, textboxEdit))
-}
-
-  user : User = new User("matteo","bell","eff","def");
-
-
-  listaone : Item[] = [
-    new Item(1,"def","olio","5kg",4,false),
-    new Item(1,"def","olio","5kg",4,false),
-    new Item(1,"def","olio","5kg",4,false),
-    new Item(1,"def","olio","5kg",4,false)
- ]
-
-  lists: ListItem[] = [
-    new ListItem(0,"lista spesa", this.user,"frr",this.listaone),
-    new ListItem(1,"lista capanna", this.user,"frfr", this.listaone)
-  ];
-
-  showInfo(id :number, value : boolean){
+    let textboxEdit: Textbox[] = [
+      new Textbox(listName, "nome lista:", true, listName, "text"),
+      new Textbox(listDesc, "descrizione:", true, listDesc, "text")
+    ]
+    this.modalService.showModal(new ModalData("Modifica lista", null, new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { console.log(textboxEdit[0].getValue(), textboxEdit[1].getValue()) }), true, textboxEdit))
+  }
+  showInfo(id: number, value: boolean) {
     let item = this.getListbyId(id);
     item.showInfo(value);
   }
 
-  getListbyId(id: number){
-    for(let item of this.lists){
-      if(item.id == id){
+  getListbyId(id: number) {
+    for (let item of this.lists) {
+      if (item.id == id) {
         return item;
       }
     }
   }
 
-  
-selectList(item : ListItem){
- 
-}
- 
+  getLists() {
+    this.listService.retrieveList(
+      (response) => {
+        console.log("success");
+        this.lists = response;
+      }, (error) => {
+        console.log("error");
+      });
+  }
+
+  selectList(item: ListItem) {
+
+  }
+
 
 }

@@ -8,6 +8,7 @@ import { ModalDataService } from '../../Services/modal.data.service';
 import { Textbox } from '../../Model/Textbox';
 import { element } from 'protractor';
 import { ModalData } from '../../Model/modal.data';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'header',
@@ -44,7 +45,7 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  constructor(private loginService: LoginService, private modalService: ModalDataService) {
+  constructor(private loginService: LoginService, private modalService: ModalDataService, private router: Router) {
 
 
     this.loginService.logged$.subscribe((login: boolean) => {
@@ -85,7 +86,7 @@ export class HeaderComponent implements OnInit {
         console.log("success");
         sessionStorage.setItem("user", JSON.stringify(response));
         this.loginService.nextLogged(true);
-        //this.router.navigate(["/" + RoutingEnum.Home]);
+        this.router.navigate(["/" + RoutingEnum.List]);
       }, (error) => {
         console.log("error");
       });

@@ -1,35 +1,37 @@
 import { User } from "./User";
 import { Item } from "./item";
 
-export class ListItem{
+export class ListItem {
 
     id: number;
     name: string;
-    user : User;
+    user: User;
     imgUrl: string;
-    list : Item[];
-    info : boolean;
+    description: string
+    list: Item[];
+    info: boolean;
 
-    constructor(id : number, name: string, user : User, imgUrl :string, list : Item[] = null,info: boolean = false){
+    constructor(id: number, name: string, user: User, imgUrl: string, list: Item[] = null, info: boolean = false, description = "") {
         this.id = id;
         this.name = name;
         this.user = user;
         this.imgUrl = imgUrl;
         this.list = list;
+        this.description = description;
     }
 
-    setImage(value:string){
+    setImage(value: string) {
         this.imgUrl = value;
     }
 
-    showInfo(value:boolean){
+    showInfo(value: boolean) {
         this.info = value;
     }
-    setName(value:string){
+    setName(value: string) {
         this.name = name;
     }
 
-    getList(){
+    getList() {
         return this.list;
     }
 

@@ -23,6 +23,8 @@ import { RemoveListMockService } from './Mock/remove-list-mock.service';
 import { UpdateListMockService } from './Mock/update-list-mock.service';
 import { ModalComponent } from './Components/modal/modal.component';
 import { DetailComponent } from './Components/detail/detail.component';
+import { SubtitleListComponent } from './Components/subtitle-list/subtitle-list.component';
+import { SubtitleUtilitiesService } from './Services/subtitleUtilities.service';
 
 
 
@@ -38,7 +40,8 @@ import { DetailComponent } from './Components/detail/detail.component';
     FooterComponent,
     PageNotFoundComponent,
     HomeComponent,
-    DetailComponent
+    DetailComponent,
+    SubtitleListComponent
   ],
   imports: [
     HttpClientModule,
@@ -46,7 +49,7 @@ import { DetailComponent } from './Components/detail/detail.component';
     CustomRouterModule,
     FormsModule
   ],
-  providers: [ModalDataService,HttpService, LoginService,  AuthguardService, HomeAuthguardService, ListService, ListMockService, AddListMockService, RemoveListMockService, UpdateListMockService],
+  providers: [ModalDataService,HttpService, LoginService,  AuthguardService, HomeAuthguardService, ListService, ListMockService, AddListMockService, RemoveListMockService, UpdateListMockService,SubtitleUtilitiesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
