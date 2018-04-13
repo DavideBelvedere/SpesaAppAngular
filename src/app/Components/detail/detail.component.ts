@@ -78,7 +78,6 @@ getListById(id : number){
   this.listService.getListById(id,
     (response) => {
       console.log("success");
-      sessionStorage.setItem("prova",JSON.stringify(response));
         return this.lister =  response;
         
       //this.router.navigate(["/" + RoutingEnum.Home]);
