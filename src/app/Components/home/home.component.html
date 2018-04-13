@@ -1,1 +1,63 @@
-<button style="height:50px;margin-top:70px" (click)="doLogin()">Prova Login Falso</button>
+<!--DOWNLOAD DELL'APP-->
+<div class="scarica" id="scarica">
+    <div id="phone"><img src="../../../assets/Risorse utili/phone.png" /></div>
+
+    <div class="download-text ">
+        <h1>IL NUOVO MODO <br> DI FARE LA SPESA!</h1>
+        <p>« Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt</p>
+    </div>
+
+    <div id="bluebox">
+        <div class="bluebox-text">
+            <p> Scarica l'applicazione per il tuo smarthphone</p>
+            <img src="../../../assets/Risorse utili/appstore.png">
+            <img src="../../../assets/Risorse utili/playstore.png">
+            <p>oppure <b>Accedi</b> o <b>Registrati</b> alla versione web!</p>
+        </div>
+    </div>
+</div>
+
+<div id="tend1"> <img src="../../../assets/Risorse custom/tendina.png"></div>
+
+<!--FUNZIONALITA' E PASSAGGI DELL'APP-->
+<div class="funzionalita" id="funzionalita">
+    <h1>Scopri le funzionalita fai la spesa senza pensieri!</h1>
+    <p>« Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt</p>
+
+    <div class="funz-box" id="funz-box-1">
+        <h3>Crea e salva le tue liste</h3>
+        <p>Compri sempre gli stessi articoli oppure<br> aggiungi sempre nuovi prodotti?</p>
+
+    </div>
+
+    <div class="funz-box" id="funz-box-2">
+        <h3>Aggiungi gli ingredienti <br> delle tue ricette</h3>
+        <p>Cosa devi preparare per cena? <br> Torta al cioccolato o piatto light?</p>
+
+    </div>
+
+    <div class="funz-box" id="funz-box-3">
+        <h3>Invia liste ai tuoi amici</h3>
+        <p>Invia le liste della spesa a chi vuoi <br> e ricevi le liste dai tuoi contatti!</p>
+    </div>
+
+    <div class="funz-box" id="funz-box-4">
+        <h3>Aggiungi e spunta <br> gli Articoli</h3>
+        <p>Controlla tutto prima di <br> andare in cassa!</p>
+    </div>
+</div>
+<div id="tend2"> <img src="../../../assets/Risorse custom/tend2.png"></div>
+
+<!--FORM E CONTATTI-->
+<div class="contatti" id="contatti">
+    <h2>Vuoi scriverci un messaggio?</h2>
+    <p>Il parere dei nostri utenti è molto importante per noi!<br> Se desideri segnalarci problemi o consigliarci qualcosa non esitare a scriverci!</p>
+
+    <form>
+        <div class="form-group">
+            <input type="email" required id="email" name="email" placeholder="indirizzo e-mail" /> <br>
+            <textarea name="messaggio" required id="mex" name="mex" placeholder="Scrivi il tuo messaggio!"></textarea><br>
+            <button type="submit" class="button" [disabled]="!contattiForm.form.valid" (click)="sendMessage()">INVIA MESSAGGIO</button>
+        </div>
+    </form>
+</div>

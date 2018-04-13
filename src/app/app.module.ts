@@ -19,7 +19,6 @@ import { AuthguardService } from './Routing/Authguard/authguard.service';
 import { HomeAuthguardService } from './Routing/Authguard/home-authguard.service';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +33,7 @@ import { HomeAuthguardService } from './Routing/Authguard/home-authguard.service
 
  
   
+    HomeComponent
   ],
   imports: [
     HttpClientModule,
