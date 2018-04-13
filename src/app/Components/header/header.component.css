@@ -74,7 +74,7 @@ button {
 .profileDiv {
     width: 300px;
     height: auto;
-    margin: 55px 15px 0 0;
+    margin: -35px 15px 0 0;
     z-index: 11;
     position: relative;
     float: right;
