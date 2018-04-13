@@ -10,7 +10,7 @@ export class ItemService {
   
 
 
-  editList(body: Item, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
+  editItem(body: Item, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
     this.httpService.callPut(
       body,
       'updateMockedItem',
@@ -25,7 +25,7 @@ export class ItemService {
       });
   }
 
-  addList(body: Item, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
+  addItem(body: Item, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
     this.httpService.callPost(
       body,
       'addMockedItem',
@@ -40,7 +40,7 @@ export class ItemService {
       });
   }
 
-  removeList(id: number, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
+  removeItem(id: number, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
     this.httpService.callDelete(
       id,
       'removeMockedItem',
@@ -54,5 +54,7 @@ export class ItemService {
           errorCallBack(error)
       });
   }
+
+  
 
 }

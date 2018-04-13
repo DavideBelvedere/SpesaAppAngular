@@ -24,6 +24,9 @@ export class Item{
     setName(value: string){
         this.name = value;
     }
+    setDose(value : string){
+        this.dose = value;
+    }
     setQuantity(value : number){
         this.quantity = value;
     }

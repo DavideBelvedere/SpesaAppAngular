@@ -44,8 +44,8 @@
     height: 50px;
     float: left;
     margin-top: 5px;
-    background-color: brown;
     margin-left: 20px;
+    overflow: hidden;
 }
 
 .item_dose {
@@ -96,4 +96,8 @@
     color: white;
     border: 1px solid orangered;
     cursor: pointer;
+}
+
+.item_img img {
+    height: 100%;
 }
