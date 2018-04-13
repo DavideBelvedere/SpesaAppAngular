@@ -10,6 +10,7 @@ import { Textbox } from '../../Model/Textbox';
 import { ListService } from '../../Services/HttpRequest/HttpUtilityService/list.service';
 import { ItemService } from '../../Services/HttpRequest/HttpUtilityService/item.service';
 import { BackendResponseEnum } from '../../Model/Enum/BackendResponseEnum';
+import { RecipeService } from '../../Services/HttpRequest/HttpUtilityService/recipe.service';
 
 @Component({
   selector: 'detail',
@@ -21,12 +22,17 @@ lister : ListItem;
 listempty : boolean = true;
 nList : number;
 
-  constructor(private  router : ActivatedRoute, private modalService : ModalDataService, private listService : ListService, private itemService : ItemService) { 
+  constructor(private  router : ActivatedRoute, private modalService : ModalDataService, private listService : ListService, private itemService : ItemService, private recipeService : RecipeService) { 
 
     this.router.params.subscribe(params=>{
       if(params['id'] != '' && params['id'] != null){
         let id = params['id'];
-      this.getListById(id);
+        if(id < 3){
+          this.getListById(id);
+        }else{
+          this.getRecipeById(id);
+        }
+      
       }
       if(this.lister.list.length == 0){
         this.listempty = false;
@@ -75,6 +81,15 @@ getItembyId(id: number){
       return item;
     }
   }
+}
+getRecipeById(id : number){
+  this.recipeService.getRecipeById(id,
+    (response) => {
+      console.log("success");
+        return this.lister =  response;
+    }, (error) => {
+      console.log("error");
+    });
 }
 
 
