@@ -7,6 +7,7 @@ import { RecipeComponent } from '../Components/recipe/recipe.component';
 import { HomeComponent } from '../Components/home/home.component';
 import { AuthguardService } from './Authguard/authguard.service';
 import { HomeAuthguardService } from './Authguard/home-authguard.service';
+import { ProfiloComponent } from '../Components/profilo/profilo.component';
 import { DetailComponent } from '../Components/detail/detail.component';
 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: RoutingEnum.Home, component: HomeComponent ,canActivate: [HomeAuthguardService]},
   { path: RoutingEnum.Detail, component: DetailComponent, canActivate: [AuthguardService]},
   { path: RoutingEnum.DetailId, component: DetailComponent, canActivate: [AuthguardService]},
+  { path: RoutingEnum.Profilo, component: ProfiloComponent ,canActivate: [AuthguardService]},
   { path: "", redirectTo: "/" + RoutingEnum.Home, pathMatch: "full" },//all'inizio accederà ad home
   { path: "**", component: PageNotFoundComponent }
 ];

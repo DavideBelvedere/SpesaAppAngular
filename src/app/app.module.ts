@@ -30,6 +30,7 @@ import { ItemService } from './Services/HttpRequest/HttpUtilityService/item.serv
 import { RecipeService } from './Services/HttpRequest/HttpUtilityService/recipe.service';
 import { RecipeMockService } from './Mock/recipe-mock.services';
 import { RecipeComponent } from './Components/recipe/recipe.component';
+import { ProfiloComponent } from './Components/profilo/profilo.component';
 
 
 
@@ -45,7 +46,10 @@ import { RecipeComponent } from './Components/recipe/recipe.component';
     PageNotFoundComponent,
     HomeComponent,
     DetailComponent,
-    SubtitleListComponent
+    SubtitleListComponent,
+    ProfiloComponent
+ 
+  
   ],
   imports: [
     HttpClientModule,

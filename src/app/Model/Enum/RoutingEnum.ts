@@ -7,6 +7,7 @@ export enum RoutingEnum {
     Recipe="recipe",
     Home = "home",
     Detail="detail",
-    DetailId = "detail/:id"
+    DetailId = "detail/:id",
+    Profilo= "profilo"
 
 }
