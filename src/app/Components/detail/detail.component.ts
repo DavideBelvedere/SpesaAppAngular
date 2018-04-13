@@ -41,9 +41,9 @@ nList : number;
 
   listaone : Item[] = [
     new Item(1,"def","olio","5kg",4,false),
-    new Item(1,"def","olio","5kg",4,false),
-    new Item(1,"def","olio","5kg",4,false),
-    new Item(1,"def","olio","5kg",4,false)
+    new Item(2,"def","olio","5kg",4,false),
+    new Item(3,"def","olio","5kg",4,false),
+    new Item(4,"def","olio","5kg",4,false)
  ]
 
   lists: ListItem[] = [
@@ -51,6 +51,18 @@ nList : number;
     new ListItem(1,"lista capanna", this.user,"frfr", this.listaone)
   ];
 
-  
+
+  openInfo(id: number , value : boolean){
+    let item = this.getItembyId(id);
+    item.setShowInfo(value);
+}
+
+getItembyId(id: number){
+  for(let item of this.listaone){
+    if(item.id == id){
+      return item;
+    }
+  }
+}
 
 }
