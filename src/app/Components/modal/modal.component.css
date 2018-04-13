@@ -10,12 +10,45 @@
     overflow: hidden;
 }
 
+label {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 .title {
     background-color: rgb(37, 157, 212);
     color: white;
     padding: 20px;
     font-size: 30px;
     text-align: center;
+    text-transform: uppercase;
+}
+
+.closeModal {
+    float: right;
+    width: 20px;
+    height: 20px;
+    background-image: url("../../../assets/img/cancel_white.png");
+}
+
+.closeModal:hover {
+    cursor: pointer;
+}
+
+.photoAdd {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    margin-bottom: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.photoAdd img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 25px;
 }
 
 .text {
@@ -49,6 +82,7 @@
     padding: 10px;
     margin-bottom: 10px;
     margin-top: 10px;
+    text-align: center;
 }
 
 .annulla,
@@ -61,13 +95,13 @@
     background-color: white;
     position: fixed;
     z-index: 5;
-    top: 200px;
+    top: 100px;
     left: 35%;
 }
 
 .login {
-    text-align: left;
-    padding-left: 30px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .labelEmail,
@@ -88,4 +122,21 @@
     border-bottom: 2px solid gray;
     list-style-type: none;
     margin-bottom: 15px;
+    color: rgb(37, 157, 212);
+}
+
+.divider {
+    width: 90%;
+    margin-left: 5%;
+}
+
+@media only screen and (max-width: 1200px) {
+    .input {
+        width: 70%;
+        background-color: white;
+        position: fixed;
+        z-index: 5;
+        left: 15%;
+        top: 100px;
+    }
 }

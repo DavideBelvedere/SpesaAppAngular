@@ -5,6 +5,8 @@ export enum RoutingEnum {
     Registrati = "registrati",
     List = "list",
     Recipe="recipe",
-    Home = "home"
+    Home = "home",
+    Detail="detail",
+    DetailId = "detail/:id"
 
 }

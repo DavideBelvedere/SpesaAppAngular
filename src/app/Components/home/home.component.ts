@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../Services/HttpRequest/HttpUtilityService/login.service';
-import { User } from '../../Model/User';
-import { Router } from '@angular/router';
-import { RoutingEnum } from '../../Model/Enum/RoutingEnum';
+import { ListService } from '../../Services/HttpRequest/HttpUtilityService/list.service';
+import { Item } from '../../Model/item';
+import { ListItem } from '../../Model/ListItem';
+
 
 @Component({
   selector: 'home',
@@ -11,9 +11,10 @@ import { RoutingEnum } from '../../Model/Enum/RoutingEnum';
 })
 export class HomeComponent implements OnInit {
   
-  constructor() { }
+  constructor(private listService: ListService) { }
 
   ngOnInit() {
   }
-  
+
+
 }

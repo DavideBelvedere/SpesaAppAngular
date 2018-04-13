@@ -7,15 +7,15 @@ export class ModalData{
     subtitle: string;
     confirm: Buttons;
     undo : Buttons;
-    showLogin : boolean;
+    showPhotoAdd : boolean;
     textboxs : Textbox[];
 
-    constructor(title: string, subtitle : string = "", confirm : Buttons = null, undo: Buttons = null, showLogin = null, textboxs :Textbox[]){
+    constructor(title: string, subtitle : string = "", confirm : Buttons = null, undo: Buttons = null, showPhotoAdd = null, textboxs :Textbox[]){
         this.title = title;
         this.subtitle = subtitle;
         this.confirm = confirm;
         this.undo = undo;
-        this.showLogin = showLogin;
+        this.showPhotoAdd = showPhotoAdd;
         this.textboxs = textboxs;
     
     }

@@ -1,13 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import { ListService } from '../list.service';
-import { ModalData } from './modal.data';
-import { ModalDataService } from '../Services/modal.data.service';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { LoginService } from '../Services/HttpRequest/HttpUtilityService/login.service';
-import { User } from '../Model/User';
 import { Observable } from 'rxjs/Observable';
+import { ModalData } from '../../Model/modal.data';
+import { ModalDataService } from '../../Services/modal.data.service';
+import { LoginService } from '../../Services/HttpRequest/HttpUtilityService/login.service';
+
 
 @Component({
   selector: 'modal',
@@ -23,16 +22,17 @@ export class ModalComponent implements OnInit {
   modalData: ModalData;
 
   modalDelete: Object;
-  constructor(private listService: ListService, private modalDataService: ModalDataService, private loginService: LoginService) {
-
-    
+  constructor( private modalDataService: ModalDataService, private loginService: LoginService) {
   }
 
   ngOnInit() {
   }
+  chargePhoto(){
+    console.log("photooo");
+  }
 
-  back() {
-    this.listService.setModal(false);
+  close() {
+    this.modalDataService.hideModal();
   }
 
 }

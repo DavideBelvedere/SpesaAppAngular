@@ -5,7 +5,7 @@
             <ul *ngIf="!isLogged">
                 <ng-container *ngFor="let item of menuListUnlogged">
                     <div class="optionDiv">
-                        <a class="option" href="#{{item.route}}">{{item.title}}</a>
+                        <a class="option" href="home#{{item.route}}">{{item.title}}</a>
                     </div>
                 </ng-container>
 

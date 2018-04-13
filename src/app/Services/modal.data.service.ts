@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Buttons } from '../Model/Buttons';
 import { Subject } from 'rxjs/Subject';
-import { ModalData } from '../modal/modal.data';
+
 import { LoginService } from './HttpRequest/HttpUtilityService/login.service';
 import { User } from '../Model/User';
+import { ModalData } from '../Model/modal.data';
 
 
 @Injectable()
@@ -25,19 +26,4 @@ export class ModalDataService {
   }
 
   email : string;
-
-
-
-  /*doLogin() {
-    this.loginService.executeLogin(user,
-      (response) => {
-        console.log("success");
-        sessionStorage.setItem("user", JSON.stringify(response));
-        this.loginService.nextLogged(true);
-        //this.router.navigate(["/" + RoutingEnum.Home]);
-      }, (error) => {
-        console.log("error");
-      });
-  }
-*/
 }
