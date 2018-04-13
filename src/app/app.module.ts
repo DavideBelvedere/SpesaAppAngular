@@ -32,7 +32,6 @@ import { ItemService } from './Services/HttpRequest/HttpUtilityService/item.serv
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +45,7 @@ import { ItemService } from './Services/HttpRequest/HttpUtilityService/item.serv
     HomeComponent,
     DetailComponent,
     SubtitleListComponent
+    
   ],
   imports: [
     HttpClientModule,
