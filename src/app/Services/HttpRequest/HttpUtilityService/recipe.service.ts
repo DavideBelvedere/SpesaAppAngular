@@ -3,13 +3,13 @@ import { HttpService } from '../http.service';
 import { ListItem } from '../../../Model/ListItem';
 
 @Injectable()
-export class ListService {
+export class RecipeService {
 
   constructor(private httpService: HttpService) { }
 
-  retrieveList(callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
+  retrieveRecipe(callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
     this.httpService.callGet(
-      'mockedList',
+      'mockedRecipe',
       null,
       (response) => {
         if (callback)
@@ -23,9 +23,9 @@ export class ListService {
 
 
 
-  getListById(id: number, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
+  getRecipeById(id: number, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
     this.httpService.callGet(
-      'mockedList',
+      'mockedRecipe',
       null,
       (response: ListItem[]) => {
         let list: ListItem;
@@ -48,10 +48,10 @@ export class ListService {
       });
   }
 
-  editList(body: ListItem, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
+  editRecipe(body: ListItem, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
     this.httpService.callPut(
       body,
-      'updateMockedList',
+      'updateMockedRecipe',
       null,
       (response) => {
         if (callback)
@@ -63,10 +63,10 @@ export class ListService {
       });
   }
 
-  addList(body: ListItem, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
+  addRecipe(body: ListItem, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
     this.httpService.callPost(
       body,
-      'addMockedList',
+      'addMockedRecipe',
       null,
       (response) => {
         if (callback)
@@ -78,10 +78,10 @@ export class ListService {
       });
   }
 
-  removeList(id: number, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
+  removeRecipe(id: number, callback: (response: any) => void = null, errorCallBack: (error: any) => void = null) {
     this.httpService.callDelete(
       id,
-      'removeMockedList',
+      'removeMockedRecipe',
       null,
       (response) => {
         if (callback)
@@ -93,16 +93,4 @@ export class ListService {
       });
   }
 
-  getPositionFromId(lists: ListItem[], id: number) :number {
-    
-    for(let i=0;lists.length;i++)
-   
-      if (lists[i].id == id) {
-        return i;
-      }
- 
-
- 
-    
-  }
 }

@@ -1,7 +1,30 @@
-<div class="detail" *ngIf="lister">
-    <div>
-        <div>{{nList}} liste ></div>
-        <div> {{lister.name}}</div>
+<div class="detail">
+    <div class="detail_header" *ngIf="listempty">
+        <div class="nlist">{{nList}} liste ></div>
+        <div class="listname"> <strong>{{lister.name}}</strong></div>
+        <div class="qty_header">quantità</div>
+        <div class="dose_header">dose</div>
     </div>
 
+    <div class="detail_itemlist" *ngIf="listempty">
+        <div *ngFor="let item of lister.list" class="item_single">
+            <div class="item_img"><img src="{{item.imgUrl}}"></div>
+            <div class="item_name">{{item.name}}</div>
+            <div class="button_edit" (click)="openInfo(item.id, true)"> <img src="../../../assets/img/more.png" alt=""></div>
+            <div class="item_qty">{{item.quantity}}</div>
+            <div class="item_dose">{{item.dose}}</div>
+
+            <div class="edit_item" *ngIf="item.showInfo">
+                <div class="icon" (click)="opneModalEdit(item)"><img src="../../../assets/img/modify.png" alt=""></div>
+                <div class="icon" (click)="openModalDelete(item)"> <img src="../../../assets/img/delete.png"></div>
+                <div class="icon" (click)="openInfo(item.id, false)"> <img src="../../../assets/img/cancel_white.png"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="addListCont" (click)="openModalAdd()">
+        +
+    </div>
 </div>

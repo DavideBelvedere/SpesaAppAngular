@@ -1,3 +1,23 @@
-<p>
-  recipe works!
-</p>
+<subtitle-list></subtitle-list>
+<div class="list_container">
+
+    <div *ngIf="listLength!=0">
+        <div class="single_list" *ngFor="let item of lists" (mouseover)="showInfo(item.id, true)" (mouseleave)="showInfo(item.id, false)">
+            <div class="listName" *ngIf="item.info">{{item.name}}</div>
+
+            <div class="name_list" *ngIf="item.info == false" [style.display]="'block'">
+                {{item.name}}
+            </div>
+            <img src="{{item.imgUrl}}" routerLink="/detail/{{item.id}}">
+            <div class="edit_hover" *ngIf="item.info" (mouseover)="showInfo(item.id, true)" [style.display]="'block'">
+                <div class="icon" (click)="openModalEditList(item.id, item.name, item.description)"><img src="../../../assets/img/modify.png"></div>
+                <div class="icon"><img src="../../../assets/img/send.png"></div>
+                <div class="icon" (click)="openModalDelete(item.name)"><img src="../../../assets/img/delete.png"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="addListCont" (click)="openModalAddList()">
+        +
+    </div>
+</div>

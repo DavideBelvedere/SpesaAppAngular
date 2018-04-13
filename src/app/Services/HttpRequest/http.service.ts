@@ -9,6 +9,7 @@ import { UpdateListMockService } from '../../Mock/update-list-mock.service';
 import { EditItemMockService } from '../../Mock/edit-item-mock.service';
 import { RemoveItemMockService } from '../../Mock/remove-item-mock.service';
 import { AddItemMockService } from '../../Mock/add-item-mock.service';
+import { RecipeMockService } from '../../Mock/recipe-mock.services';
 
 @Injectable()
 export class HttpService {
@@ -58,6 +59,9 @@ export class HttpService {
         let mock: ListMockService = new ListMockService();
         callback(mock.getMock(idurl));
 
+      }else if(idurl == 'mockedRecipe'){
+        let mock : RecipeMockService = new RecipeMockService();
+        callback(mock.getMock(idurl));
       }
 
     }
