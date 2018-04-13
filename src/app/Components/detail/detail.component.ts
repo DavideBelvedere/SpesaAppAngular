@@ -18,7 +18,7 @@ import { BackendResponseEnum } from '../../Model/Enum/BackendResponseEnum';
 })
 export class DetailComponent implements OnInit {
 lister : ListItem;
-listempty : boolean;
+listempty : boolean = true;
 nList : number;
 
   constructor(private  router : ActivatedRoute, private modalService : ModalDataService, private listService : ListService, private itemService : ItemService) { 
@@ -28,17 +28,18 @@ nList : number;
         let id = params['id'];
       this.getListById(id);
       }
+      if(this.lister.list.length == 0){
+        this.listempty = false;
+      }else{
+        this.listempty = true;
+      }
     });
 
-    if(this.lister.list.length == 0){
-      this.listempty = true;
-    }else{
-      this.listempty = false;
-    }
+
+    
   }
 
   ngOnInit() {
-  
    
   }
   textboxAdd: Textbox[] = [
@@ -136,4 +137,6 @@ editItem(item : Item, nome : string, dose: string , quanty : string){
   })
   this.modalService.hideModal();
 }
+
+
 }

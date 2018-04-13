@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { ListComponent } from './Components/list/list.component';
-import { RecipeComponent } from './Components/recipe/recipe.component';
+
 import { FooterComponent } from './Components/footer/footer.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 import { CustomRouterModule } from './Routing/router.module';
@@ -29,6 +29,9 @@ import { AddItemMockService } from './Mock/add-item-mock.service';
 import { EditItemMockService } from './Mock/edit-item-mock.service';
 import { RemoveItemMockService } from './Mock/remove-item-mock.service';
 import { ItemService } from './Services/HttpRequest/HttpUtilityService/item.service';
+import { RecipeService } from './Services/HttpRequest/HttpUtilityService/recipe.service';
+import { RecipeMockService } from './Mock/recipe-mock.services';
+import { RecipeComponent } from './Components/recipe/recipe.component';
 
 
 
@@ -53,7 +56,7 @@ import { ItemService } from './Services/HttpRequest/HttpUtilityService/item.serv
     CustomRouterModule,
     FormsModule
   ],
-  providers: [ModalDataService,HttpService, LoginService,  AuthguardService, HomeAuthguardService, ListService, ListMockService, AddListMockService, RemoveListMockService, UpdateListMockService,SubtitleUtilitiesService,AddItemMockService,RemoveItemMockService, EditItemMockService, ItemService],
+  providers: [ModalDataService,HttpService, LoginService,  AuthguardService, HomeAuthguardService, ListService, ListMockService, AddListMockService, RemoveListMockService, UpdateListMockService,SubtitleUtilitiesService,AddItemMockService,RemoveItemMockService, EditItemMockService, ItemService, RecipeService, RecipeMockService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

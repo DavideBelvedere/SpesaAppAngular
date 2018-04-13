@@ -6,12 +6,6 @@
         <div class="dose_header">dose</div>
     </div>
 
-    <div class="datail_empty" *ngIf="isempty">
-
-
-
-    </div>
-
     <div class="detail_itemlist" *ngIf="listempty">
         <div *ngFor="let item of lister.list" class="item_single">
             <div class="item_img"><img src="{{item.imgUrl}}"></div>
@@ -21,7 +15,6 @@
             <div class="item_dose">{{item.dose}}</div>
 
             <div class="edit_item" *ngIf="item.showInfo">
-
                 <div class="icon" (click)="opneModalEdit(item)"><img src="../../../assets/img/modify.png" alt=""></div>
                 <div class="icon" (click)="openModalDelete(item)"> <img src="../../../assets/img/delete.png"></div>
                 <div class="icon" (click)="openInfo(item.id, false)"> <img src="../../../assets/img/cancel_white.png"></div>
