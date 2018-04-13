@@ -32,6 +32,7 @@ export class ListService {
         response.forEach(item => {
           if (item.id.toString() === id.toString()) {
             list = item;
+            
           }
         });
         if (callback && list)

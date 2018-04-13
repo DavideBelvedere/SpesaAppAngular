@@ -7,6 +7,7 @@ import { ModalDataService } from '../../Services/modal.data.service';
 import { ModalData } from '../../Model/modal.data';
 import { Buttons } from '../../Model/Buttons';
 import { Textbox } from '../../Model/Textbox';
+import { ListService } from '../../Services/HttpRequest/HttpUtilityService/list.service';
 
 @Component({
   selector: 'detail',
@@ -18,42 +19,23 @@ lister : ListItem;
 
 nList : number;
 
-  constructor(private  router : ActivatedRoute, private modalService : ModalDataService) { 
+  constructor(private  router : ActivatedRoute, private modalService : ModalDataService, private listService : ListService ) { 
 
     this.router.params.subscribe(params=>{
       if(params['id'] != '' && params['id'] != null){
-       this.lister = this.getListbyId(params['id']);
+        let id = params['id'];
+
+        
+      this.getListById(id);
       }
     })
   }
 
   ngOnInit() {
-    this.nList = this.lists.length;
-  }
-
-  getListbyId(id: number){
-    for(let item of this.lists){
-      if(item.id == id){
-        return item;
-      }
-    }
+   
   }
 
 
-  user : User = new User("matteo","bell","eff","def");
-
-
-  listaone : Item[] = [
-    new Item(1,"def","olio","5kg",4,false),
-    new Item(2,"def","olio","5kg",4,false),
-    new Item(3,"def","olio","5kg",4,false),
-    new Item(4,"def","olio","5kg",4,false)
- ]
-
-  lists: ListItem[] = [
-    new ListItem(0,"lista spesa", this.user,"frr",this.listaone),
-    new ListItem(1,"lista capanna", this.user,"frfr", this.listaone)
-  ];
 
   textboxAdd: Textbox[] = [
     new Textbox(null, null, true, "nome prodotto", "text"),
@@ -84,11 +66,27 @@ nList : number;
 }
 
 getItembyId(id: number){
-  for(let item of this.listaone){
+  for(let item of this.lister.list){
     if(item.id == id){
       return item;
     }
   }
 }
+
+
+getListById(id : number){
+  this.listService.getListById(id,
+    (response) => {
+      console.log("success");
+      sessionStorage.setItem("prova",JSON.stringify(response));
+        return this.lister =  response;
+        
+      //this.router.navigate(["/" + RoutingEnum.Home]);
+    }, (error) => {
+      console.log("error");
+    });
+}
+
+
 
 }
