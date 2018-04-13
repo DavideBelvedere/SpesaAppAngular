@@ -5,6 +5,7 @@ export enum RoutingEnum {
     Registrati = "registrati",
     List = "list",
     Recipe="recipe",
-    Home = "home"
+    Home = "home",
+    Profilo= "profilo"
 
 }

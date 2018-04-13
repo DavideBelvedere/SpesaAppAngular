@@ -28,7 +28,7 @@
 
 </div>
 <div *ngIf="isProfileClicked" class="profileDiv fadeIn">
-    <a>{{currentUser.username}}</a>
+    <a routerLink="/profilo">{{currentUser.username}}</a>
     <p>{{currentUser.email}}</p>
     <hr>
     <a (click)="doLogout()">Logout</a>
