@@ -28,7 +28,10 @@ export class ListItem {
         this.info = value;
     }
     setName(value: string) {
-        this.name = name;
+        this.name = value;
+    }
+    setDescription(value: string) {
+        this.description = value;
     }
 
     getList() {
