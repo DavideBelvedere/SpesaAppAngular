@@ -1,7 +1,7 @@
-
-
 /* PRIMA PAGINA */
+
 .scarica {
+    position: relative;
     width: 100%;
     height: 600px;
     background-image: url('../../../assets/Risorse utili/BG_home.jpg');
@@ -23,8 +23,7 @@
     font-size: 23px;
 }
 
-
-#bluebox{
+#bluebox {
     background-color: #59afe2;
     position: relative;
     width: 100%;
@@ -32,10 +31,9 @@
     top: 190px;
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
-
 }
 
-.bluebox-text{
+.bluebox-text {
     position: relative;
     right: 380px;
     top: 30px;
@@ -44,11 +42,11 @@
     font-size: 16px;
 }
 
-.bluebox-text img{
+.bluebox-text img {
     cursor: pointer;
 }
 
-#phone{
+#phone {
     position: absolute;
     width: 20%;
     top: 120px;
@@ -57,7 +55,7 @@
     z-index: 1;
 }
 
-#tend1{
+#tend1 {
     position: relative;
     text-align: center;
     z-index: 2;
@@ -66,7 +64,69 @@
     top: 0px;
 }
 
+
+/*IPAD MEDIA QUERY PERCHE' USARE LE GRIGLIE O BOOTSTRAP E' TROPPO MAINSTREAM*/
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .scarica {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        background-image: url('../../../assets/Risorse utili/BG_home.jpg');
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        font-family: 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .download-text {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        color: white;
+        font-size: 18px;
+        left: 0;
+    }
+    .download-text p {
+        font-size: 29px;
+    }
+    #bluebox {
+        background-color: #59afe2;
+        position: relative;
+        width: 100%;
+        height: 190px;
+        top: 190px;
+        font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+    }
+    .bluebox-text {
+        position: relative;
+        right: 380px;
+        top: 30px;
+        margin: auto;
+        color: white;
+        font-size: 16px;
+        right: 0;
+    }
+    .bluebox-text img {
+        cursor: pointer;
+    }
+    #phone {
+        visibility: collapse;
+    }
+    #tend1 {
+        position: relative;
+        text-align: center;
+        z-index: 2;
+        overflow: hidden;
+        background-color: white;
+        top: 0px;
+    }
+}
+
+
 /* SECONDA PAGINA */
+
 .funzionalita {
     position: relative;
     width: 100%;
@@ -98,50 +158,54 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-#funz-box-1 p{
+
+#funz-box-1 p {
     top: 140px;
     position: relative;
 }
-#funz-box-1 h3{
+
+#funz-box-1 h3 {
     position: relative;
     top: 46px;
     right: -80px;
- }
+}
 
- 
-#funz-box-2{
+#funz-box-2 {
     background-image: url('../../../assets/Risorse custom/funz2.png');
     background-position: center;
     background-repeat: no-repeat;
 }
-#funz-box-2 p{
+
+#funz-box-2 p {
     top: 150px;
     position: relative;
 }
-#funz-box-2 h3{
+
+#funz-box-2 h3 {
     text-align: right;
     position: relative;
     top: 40px;
-    right: 40px;;
- }
-
+    right: 40px;
+    ;
+}
 
 #funz-box-3 {
     background-image: url('../../../assets/Risorse custom/funz3.png');
     background-position: center;
     background-repeat: no-repeat;
 }
-#funz-box-3 p{
+
+#funz-box-3 p {
     top: 170px;
     position: relative;
 }
-#funz-box-3 h3{
+
+#funz-box-3 h3 {
     text-align: left;
     position: relative;
     top: 80px;
     left: 55px;
- }
-
+}
 
 #funz-box-4 {
     background-image: url('../../../assets/Risorse custom/funz4.png');
@@ -149,19 +213,19 @@
     background-repeat: no-repeat;
 }
 
-#funz-box-4 h3{
+#funz-box-4 h3 {
     text-align: left;
     position: relative;
     top: 60px;
 }
-#funz-box-4 p{
+
+#funz-box-4 p {
     position: relative;
     bottom: -160px;
     text-align: left;
 }
 
-
-#tend2{
+#tend2 {
     position: relative;
     text-align: center;
     z-index: 2;
@@ -172,12 +236,15 @@
     margin: 3px;
     padding-bottom: 40px;
 }
-#tend2 img{
+
+#tend2 img {
     width: 91px;
     height: 42px;
 }
 
+
 /* TERZA PAGINA */
+
 .contatti {
     background-color: #59afe2;
     color: white;
@@ -191,7 +258,7 @@
     font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-.contatti p{
+.contatti p {
     padding-bottom: 50px;
 }
 
@@ -200,19 +267,17 @@
     width: 600px;
     height: 40px;
     margin: 10px;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-
-#mex{
+#mex {
     position: relative;
     resize: none;
     width: 598px;
     height: 150px;
     margin: 10px;
     padding: none;
-    font-family:Arial, Helvetica, sans-serif;
-
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 button {
@@ -224,11 +289,12 @@ button {
     background-color: #4f5d7a;
     color: white;
     border: none;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 21px;
 }
 
-#email::placeholder, #mex::placeholder  {
+#email::placeholder,
+#mex::placeholder {
     padding: 15px;
     font-size: 19px;
     color: lightgray;
