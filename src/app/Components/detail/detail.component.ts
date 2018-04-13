@@ -27,7 +27,7 @@ nList : number;
     this.router.params.subscribe(params=>{
       if(params['id'] != '' && params['id'] != null){
         let id = params['id'];
-        if(id < 3){
+        if(id < 100){
           this.getListById(id);
         }else{
           this.getRecipeById(id);
