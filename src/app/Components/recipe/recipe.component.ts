@@ -28,7 +28,9 @@ export class RecipeComponent implements OnInit {
 
   ngOnInit() {
     this.getLists();
-  
+  for(let item of this.lists){
+    item.showInfo(false);
+  }
   }
 
 
