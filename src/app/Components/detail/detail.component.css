@@ -81,3 +81,19 @@
     margin-top: 10px;
     cursor: pointer;
 }
+
+.addListCont {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 300%;
+    text-align: center;
+    line-height: 55px;
+    position: absolute;
+    bottom: 90px;
+    right: 90px;
+    background-color: orange;
+    color: white;
+    border: 1px solid orangered;
+    cursor: pointer;
+}

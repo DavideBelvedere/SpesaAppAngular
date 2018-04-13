@@ -17,12 +17,16 @@
 
             <div class="edit_item" *ngIf="item.showInfo">
 
-                <div class="icon"><img src="../../../assets/img/modify.png" alt=""></div>
-                <div class="icon"> <img src="../../../assets/img/delete.png"></div>
+                <div class="icon" (click)="opneModalEdit(item)"><img src="../../../assets/img/modify.png" alt=""></div>
+                <div class="icon" (click)="openModalDelete(item)"> <img src="../../../assets/img/delete.png"></div>
                 <div class="icon" (click)="openInfo(item.id, false)"> <img src="../../../assets/img/cancel_white.png"></div>
             </div>
 
         </div>
 
+    </div>
+
+    <div class="addListCont" (click)="openModalAdd()">
+        +
     </div>
 </div>

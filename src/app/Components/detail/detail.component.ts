@@ -3,6 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { ListItem } from '../../Model/ListItem';
 import { User } from '../../Model/User';
 import { Item } from '../../Model/item';
+import { ModalDataService } from '../../Services/modal.data.service';
+import { ModalData } from '../../Model/modal.data';
+import { Buttons } from '../../Model/Buttons';
+import { Textbox } from '../../Model/Textbox';
 
 @Component({
   selector: 'detail',
@@ -14,7 +18,7 @@ lister : ListItem;
 
 nList : number;
 
-  constructor(private  router : ActivatedRoute) { 
+  constructor(private  router : ActivatedRoute, private modalService : ModalDataService) { 
 
     this.router.params.subscribe(params=>{
       if(params['id'] != '' && params['id'] != null){
@@ -51,6 +55,28 @@ nList : number;
     new ListItem(1,"lista capanna", this.user,"frfr", this.listaone)
   ];
 
+  textboxAdd: Textbox[] = [
+    new Textbox(null, null, true, "nome prodotto", "text"),
+    new Textbox(null, null, true, "dose", "text"),
+    new Textbox(null, null, true, "quantità", "text")
+  ];
+
+  openModalAdd(){
+      this.modalService.showModal(new ModalData("Aggiungi Prodotto", null, new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { console.log(this.textboxAdd[0].getValue()) }), true, this.textboxAdd))
+  }
+  
+  opneModalEdit(item :Item){
+    let textboxEdit: Textbox[] = [
+      new Textbox( null , "nome prodotto:", true, item.name, "text"),
+      new Textbox(null, "quantità:", true, item.quantity.toString(), "text"),
+      new Textbox(null, "dose:", true, item.dose, "text")
+    ]
+      this.modalService.showModal(new ModalData("Modifica Prodotto", null, new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { console.log(textboxEdit[0].getValue(), textboxEdit[1].getValue()) }), true, textboxEdit))
+  }
+
+  openModalDelete(item: Item){
+    this.modalService.showModal(new ModalData("Elimina prodotto", "Vuoi eliminare il prodotto <strong>" +item.name + "</strong> ?", new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { console.log() }), null, null))
+  }
 
   openInfo(id: number , value : boolean){
     let item = this.getItembyId(id);
