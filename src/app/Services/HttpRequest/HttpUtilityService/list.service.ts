@@ -93,4 +93,16 @@ export class ListService {
       });
   }
 
+  getPositionFromId(lists: ListItem[], id: number) :number {
+    
+    for(let i=0;lists.length;i++)
+   
+      if (lists[i].id == id) {
+        return i;
+      }
+ 
+
+ 
+    
+  }
 }

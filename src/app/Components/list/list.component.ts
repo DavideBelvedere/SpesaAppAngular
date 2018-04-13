@@ -12,6 +12,8 @@ import { Item } from '../../Model/item';
 import { Router } from '@angular/router';
 import { ListService } from '../../Services/HttpRequest/HttpUtilityService/list.service';
 import { SubtitleUtilitiesService } from '../../Services/subtitleUtilities.service';
+import { removeSummaryDuplicates } from '@angular/compiler';
+import { BackendResponseEnum } from '../../Model/Enum/BackendResponseEnum';
 
 
 @Component({
@@ -29,7 +31,7 @@ export class ListComponent implements OnInit {
   ngOnInit() {
     this.getLists();
     this.listLength = this.lists.length;
-    
+
     if (this.listLength == 0) {
       this.subtitleUtilitiesService.nextNumberList("Nessuna Lista Presente");
     } else {
@@ -43,8 +45,9 @@ export class ListComponent implements OnInit {
   }
 
 
-  openModalDelete(name: string) {
-    this.modalService.showModal(new ModalData("elimina lista", "vuoi eliminare la lista <strong>" + name + "</strong> ?", new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { console.log("confirm!") }), null, null));
+  openModalDelete(name: string, id: number) {
+    this.modalService.showModal(new ModalData("elimina lista", "vuoi eliminare la lista <strong>" + name + "</strong> ?", new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { this.removeList(id) }), null, null));
+
   }
   textboxAdd: Textbox[] = [
     new Textbox("nome della lista", "nome lista:", true, "nome lista", "text"),
@@ -52,7 +55,7 @@ export class ListComponent implements OnInit {
   ];
 
   openModalAddList() {
-    this.modalService.showModal(new ModalData("Aggiungi lista", null, new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { console.log(this.textboxAdd[0].getValue(), this.textboxAdd[1].getValue()) }), true, this.textboxAdd))
+    this.modalService.showModal(new ModalData("Aggiungi lista", null, new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { this.addList(this.textboxAdd[0].getValue(), this.textboxAdd[1].getValue()) }), true, this.textboxAdd))
   }
 
   openModalEditList(id: number, listName: string, listDesc: string) {
@@ -61,7 +64,7 @@ export class ListComponent implements OnInit {
       new Textbox(listName, "nome lista:", true, listName, "text"),
       new Textbox(listDesc, "descrizione:", true, listDesc, "text")
     ]
-    this.modalService.showModal(new ModalData("Modifica lista", null, new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { console.log(textboxEdit[0].getValue(), textboxEdit[1].getValue()) }), true, textboxEdit))
+    this.modalService.showModal(new ModalData("Modifica lista", null, new Buttons("Annulla", () => { this.modalService.hideModal() }), new Buttons("Conferma", () => { this.editList(id,textboxEdit[0].getValue(),textboxEdit[1].getValue(),)}), true, textboxEdit))
   }
   showInfo(id: number, value: boolean) {
     let item = this.getListbyId(id);
@@ -76,19 +79,67 @@ export class ListComponent implements OnInit {
     }
   }
 
+
+  removeList(id: number) {
+
+    this.listService.removeList(
+      id,
+      (response) => {
+        if (response == BackendResponseEnum.Correct) {
+          this.lists.splice(this.listService.getPositionFromId(this.lists, id), 1); this.modalService.hideModal();
+        }
+      }, (error) => {
+        console.log("error");
+      });
+  }
+
   getLists() {
     this.listService.retrieveList(
       (response) => {
-        console.log("success");
         this.lists = response;
       }, (error) => {
         console.log("error");
       });
   }
 
-  selectList(item: ListItem) {
-
+  editList(id: number, name: string, description: string) {
+   let editedList: ListItem = new ListItem(id, name, JSON.parse(sessionStorage.getItem("user")), "", null, false, description);
+    this.listService.editList(
+     editedList,
+      (response) => {
+        if (response == BackendResponseEnum.Correct) {
+          this.lists[this.listService.getPositionFromId(this.lists,id)].setName(editedList.name);
+          this.lists[this.listService.getPositionFromId(this.lists,id)].setDescription(editedList.description);
+        }
+        this.modalService.hideModal();
+      }, (error) => {
+        console.log("error");
+      });
   }
+
+  addList(name: string, description: string){
+    let listItem: Item[] = [
+      new Item(11, "../../../assets/img/carne.jpg", "leprecaun", "4kg", 0, false),
+      new Item(12, "../../assets/img/carne.jpeg", "lollipop", "900grammi", 3, false),
+      
+    ];
+    let addedList:ListItem=new ListItem((this.lists.length+1), name, JSON.parse(sessionStorage.getItem('user')), "../../assets/img/carne.jpeg", listItem, false, description);
+
+    this.listService.addList(
+      addedList,
+      (response) => {
+        if (response == BackendResponseEnum.Correct) {
+          this.lists.push(addedList);
+          this.showInfo(addedList.id,false);
+        }
+        this.modalService.hideModal();
+      }, (error) => {
+        console.log("error");
+      });
+  }
+
+
+
 
 
 }
