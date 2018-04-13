@@ -1,9 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-
 import { ListComponent } from './Components/list/list.component';
-
 import { FooterComponent } from './Components/footer/footer.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 import { CustomRouterModule } from './Routing/router.module';
@@ -48,7 +46,6 @@ import { RecipeComponent } from './Components/recipe/recipe.component';
     HomeComponent,
     DetailComponent,
     SubtitleListComponent
-    
   ],
   imports: [
     HttpClientModule,
