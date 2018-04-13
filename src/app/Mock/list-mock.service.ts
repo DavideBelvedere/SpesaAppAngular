@@ -7,7 +7,7 @@ import { Item } from '../Model/item';
 @Injectable()
 export class ListMockService {
 
-  constructor(){}
+  constructor() { }
 
   getMock(id: string): any {
     return this.serviceMap[id] ? this.serviceMap[id].mock : "";
@@ -23,29 +23,29 @@ export class ListMockService {
 }
 
 export const ListItem1: Item[] = [
-  new Item(1, "../../assets/img/image-profile.png", "pera", "", 2, false),
-  new Item(2, "../../assets/img/image-profile.png", "mela", "", 5, true),
-  new Item(3, "../../assets/img/image-profile.png", "pane", "", 6, false),
-  new Item(4, "../../assets/img/image-profile.png", "acqua", "", 6, false)
+  new Item(1, "../../assets/img/carne.jpeg", "pera", "", 2, false),
+  new Item(2, "../../assets/img/carne.jpeg", "mela", "", 5, true),
+  new Item(3, "../../assets/img/carne.jpeg", "pane", "", 6, false),
+  new Item(4, "../../assets/img/carne.jpeg", "acqua", "", 6, false)
 ]
 
 export const ListItem2: Item[] = [
-  new Item(5, "../../assets/img/image-profile.png", "farina", "200grammi", 0, false),
-  new Item(6, "../../assets/img/image-profile.png", "zucchero", "500grammi", 3, true),
-  new Item(7, "../../assets/img/image-profile.png", "biscotti", "200grammi", 6, false),
-  new Item(4, "../../assets/img/image-profile.png", "acqua", "", 6, false)
+  new Item(5, "../../assets/img/carne.jpeg", "farina", "200grammi", 0, false),
+  new Item(6, "../../assets/img/carne.jpeg", "zucchero", "500grammi", 3, true),
+  new Item(7, "../../assets/img/carne.jpeg", "biscotti", "200grammi", 6, false),
+  new Item(4, "../../assets/img/carne.jpeg", "acqua", "", 6, false)
 ]
 
 export const ListItem3: Item[] = [
-  new Item(8, "../../assets/img/image-profile.png", "pesce", "2kg", 0, false),
-  new Item(10, "../../assets/img/image-profile.png", "manzo", "500grammi", 3, false),
-  new Item(7, "../../assets/img/image-profile.png", "biscotti", "200grammi", 6, false),
-  new Item(4, "../../assets/img/image-profile.png", "acqua", "", 1, true)
+  new Item(8, "../../assets/img/carne.jpeg", "pesce", "2kg", 0, false),
+  new Item(10, "../../assets/img/carne.jpeg", "manzo", "500grammi", 3, false),
+  new Item(7, "../../assets/img/carne.jpeg", "biscotti", "200grammi", 6, false),
+  new Item(4, "../../assets/img/carne.jpeg", "acqua", "", 1, true)
 ]
 export const ListMock: ListItem[] =
 
   [
-    new ListItem(1, "Lista Domenica", JSON.parse(sessionStorage.getItem('user')), "../../assets/img/image-profile.png", ListItem1),
-    new ListItem(2, "Lista Feste", JSON.parse(sessionStorage.getItem('user')), "../../assets/img/image-profile.png", ListItem2),
-    new ListItem(3, "Lista Spesucola", JSON.parse(sessionStorage.getItem('user')), "../../assets/img/image-profile.png", ListItem3),
+    new ListItem(1, "Lista Domenica", JSON.parse(sessionStorage.getItem('user')), "../../assets/img/carne.jpeg", ListItem1, false, "descrizione1"),
+    new ListItem(2, "Lista Feste", JSON.parse(sessionStorage.getItem('user')), "../../assets/img/carne.jpeg", ListItem2, false, "descrizione2"),
+    new ListItem(3, "Lista Spesucola", JSON.parse(sessionStorage.getItem('user')), "../../assets/img/carne.jpeg", ListItem3, false, "descrizione3"),
   ]

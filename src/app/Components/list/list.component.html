@@ -8,9 +8,9 @@
             <div class="name_list" *ngIf="item.info == false" [style.display]="'block'">
                 {{item.name}}
             </div>
-            <img src="../../../assets/img/carne.jpeg" routerLink="/detail/{{item.id}}">
+            <img src="{{item.imgUrl}}" routerLink="/detail/{{item.id}}">
             <div class="edit_hover" *ngIf="item.info" (mouseover)="showInfo(item.id, true)" [style.display]="'block'">
-                <div class="icon" (click)="openModalEditList(item.id, item.name, null)"><img src="../../../assets/img/modify.png"></div>
+                <div class="icon" (click)="openModalEditList(item.id, item.name, item.description)"><img src="../../../assets/img/modify.png"></div>
                 <div class="icon"><img src="../../../assets/img/send.png"></div>
                 <div class="icon" (click)="openModalDelete(item.name)"><img src="../../../assets/img/delete.png"></div>
             </div>
